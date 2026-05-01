@@ -1,0 +1,527 @@
+{
+  "workspace_name": "飞书经营协同空间",
+  "version": 1,
+  "generated_at": "2026-05-01T18:14:34+08:00",
+  "source_summary": {
+    "ordinary_tables": 3,
+    "multidimensional_tables": 1,
+    "last_sync": "2026-05-01T12:38:00+08:00",
+    "mode": "Mock 飞书实时同步"
+  },
+  "kpis": [
+    {
+      "id": "revenue",
+      "label": "营收累计",
+      "display": "¥ 6,413 万",
+      "detail": "计划达成 100.6%",
+      "signal": "逐月来自财务经营立方的实时汇总",
+      "tone": "teal"
+    },
+    {
+      "id": "gross_margin",
+      "label": "综合毛利率",
+      "display": "39.9%",
+      "detail": "毛利额 ¥ 2,561 万",
+      "signal": "解决方案与交付服务是拉低点",
+      "tone": "ink"
+    },
+    {
+      "id": "cash_rate",
+      "label": "回款转换率",
+      "display": "83.0%",
+      "detail": "累计实收 ¥ 5,324 万",
+      "signal": "临近交付项目是本周回款抓手",
+      "tone": "amber"
+    },
+    {
+      "id": "active_projects",
+      "label": "活跃项目数",
+      "display": "11 个",
+      "detail": "其中预警项目 7 个",
+      "signal": "P0 / P1 项目占比偏高",
+      "tone": "rose"
+    },
+    {
+      "id": "delivery_warning",
+      "label": "交付预警",
+      "display": "3 项",
+      "detail": "14 天内关键节点 5 项",
+      "signal": "红灯里程碑需要经营例会逐项盯办",
+      "tone": "slate"
+    }
+  ],
+  "trend": [
+    {
+      "month": "2026-01",
+      "label": "1月",
+      "plan": 936,
+      "actual": 930,
+      "cash_in": 738,
+      "margin": 39.1
+    },
+    {
+      "month": "2026-02",
+      "label": "2月",
+      "plan": 992,
+      "actual": 986,
+      "cash_in": 788,
+      "margin": 39.4
+    },
+    {
+      "month": "2026-03",
+      "label": "3月",
+      "plan": 1043,
+      "actual": 1045,
+      "cash_in": 870,
+      "margin": 39.7
+    },
+    {
+      "month": "2026-04",
+      "label": "4月",
+      "plan": 1084,
+      "actual": 1119,
+      "cash_in": 934,
+      "margin": 39.8
+    },
+    {
+      "month": "2026-05",
+      "label": "5月",
+      "plan": 1135,
+      "actual": 1132,
+      "cash_in": 968,
+      "margin": 40.5
+    },
+    {
+      "month": "2026-06",
+      "label": "6月",
+      "plan": 1186,
+      "actual": 1201,
+      "cash_in": 1026,
+      "margin": 40.9
+    }
+  ],
+  "health": {
+    "total_projects": 12,
+    "health_counts": {
+      "red": 2,
+      "amber": 5,
+      "green": 5
+    },
+    "stage_counts": {
+      "实施中": 5,
+      "运营中": 3,
+      "验收中": 2,
+      "暂停": 1,
+      "规划中": 1
+    }
+  },
+  "line_performance": [
+    {
+      "business_line": "SaaS订阅",
+      "actual": 2114.0,
+      "plan": 2035.0,
+      "cash": 1924.0,
+      "margin": 59.4,
+      "attainment": 103.9
+    },
+    {
+      "business_line": "解决方案",
+      "actual": 1854.0,
+      "plan": 1905.0,
+      "cash": 1274.0,
+      "margin": 27.6,
+      "attainment": 97.3
+    },
+    {
+      "business_line": "交付服务",
+      "actual": 1754.0,
+      "plan": 1770.0,
+      "cash": 1516.0,
+      "margin": 24.1,
+      "attainment": 99.1
+    },
+    {
+      "business_line": "客户成功",
+      "actual": 691.0,
+      "plan": 666.0,
+      "cash": 610.0,
+      "margin": 53.5,
+      "attainment": 103.8
+    }
+  ],
+  "focus_projects": [
+    {
+      "project_code": "PJT-2603",
+      "project_name": "智造工厂可视化二期",
+      "owner": "许维",
+      "business_line": "交付服务",
+      "stage": "验收中",
+      "health": "红",
+      "progress": 84,
+      "milestone": "最终验收",
+      "milestone_due": "2026-05-06",
+      "days_to_due": 5,
+      "blocker": "现场稳定性缺陷未关闭",
+      "revenue_recognized": 620,
+      "priority": "P0"
+    },
+    {
+      "project_code": "PJT-2608",
+      "project_name": "智慧园区一体机",
+      "owner": "周岭",
+      "business_line": "解决方案",
+      "stage": "暂停",
+      "health": "红",
+      "progress": 36,
+      "milestone": "甲方预算重审",
+      "milestone_due": "2026-06-02",
+      "days_to_due": 32,
+      "blocker": "客户预算冻结",
+      "revenue_recognized": 210,
+      "priority": "P0"
+    },
+    {
+      "project_code": "PJT-2601",
+      "project_name": "华东政企云迁移",
+      "owner": "林皓",
+      "business_line": "解决方案",
+      "stage": "实施中",
+      "health": "黄",
+      "progress": 68,
+      "milestone": "二批应用切换",
+      "milestone_due": "2026-05-09",
+      "days_to_due": 8,
+      "blocker": "客户侧测试环境迟交付",
+      "revenue_recognized": 420,
+      "priority": "P0"
+    },
+    {
+      "project_code": "PJT-2604",
+      "project_name": "金融私有化部署",
+      "owner": "唐笙",
+      "business_line": "解决方案",
+      "stage": "实施中",
+      "health": "黄",
+      "progress": 57,
+      "milestone": "安全测评",
+      "milestone_due": "2026-05-15",
+      "days_to_due": 14,
+      "blocker": "等保测评窗口排期冲突",
+      "revenue_recognized": 540,
+      "priority": "P0"
+    },
+    {
+      "project_code": "PJT-2609",
+      "project_name": "连锁药房 BI",
+      "owner": "赵屿",
+      "business_line": "交付服务",
+      "stage": "验收中",
+      "health": "黄",
+      "progress": 88,
+      "milestone": "培训交付",
+      "milestone_due": "2026-05-11",
+      "days_to_due": 10,
+      "blocker": "药监口径报表变更",
+      "revenue_recognized": 390,
+      "priority": "P1"
+    },
+    {
+      "project_code": "PJT-2606",
+      "project_name": "海外门户重构",
+      "owner": "李硕",
+      "business_line": "交付服务",
+      "stage": "实施中",
+      "health": "黄",
+      "progress": 63,
+      "milestone": "多语言验收",
+      "milestone_due": "2026-05-12",
+      "days_to_due": 11,
+      "blocker": "前端资源排期紧张",
+      "revenue_recognized": 350,
+      "priority": "P1"
+    }
+  ],
+  "delivery_focus": [
+    {
+      "delivery_id": "DLV-101",
+      "project_code": "PJT-2603",
+      "milestone": "最终验收",
+      "owner": "许维",
+      "due_date": "2026-05-06",
+      "days_to_due": 5,
+      "priority": "P0",
+      "completion": 82,
+      "health": "红",
+      "acceptance_status": "待客户验收",
+      "note": "现场稳定性问题仍在回归"
+    },
+    {
+      "delivery_id": "DLV-102",
+      "project_code": "PJT-2601",
+      "milestone": "二批应用切换",
+      "owner": "林皓",
+      "due_date": "2026-05-09",
+      "days_to_due": 8,
+      "priority": "P0",
+      "completion": 74,
+      "health": "黄",
+      "acceptance_status": "预演中",
+      "note": "需客户确认切换窗口"
+    },
+    {
+      "delivery_id": "DLV-105",
+      "project_code": "PJT-2604",
+      "milestone": "安全测评",
+      "owner": "唐笙",
+      "due_date": "2026-05-15",
+      "days_to_due": 14,
+      "priority": "P0",
+      "completion": 58,
+      "health": "黄",
+      "acceptance_status": "预约中",
+      "note": "测评机构排期偏紧"
+    },
+    {
+      "delivery_id": "DLV-104",
+      "project_code": "PJT-2609",
+      "milestone": "培训交付",
+      "owner": "赵屿",
+      "due_date": "2026-05-11",
+      "days_to_due": 10,
+      "priority": "P1",
+      "completion": 88,
+      "health": "黄",
+      "acceptance_status": "待排课",
+      "note": "客户希望增加财务角色培训"
+    },
+    {
+      "delivery_id": "DLV-103",
+      "project_code": "PJT-2606",
+      "milestone": "多语言验收",
+      "owner": "李硕",
+      "due_date": "2026-05-12",
+      "days_to_due": 11,
+      "priority": "P1",
+      "completion": 67,
+      "health": "黄",
+      "acceptance_status": "待内部检查",
+      "note": "英文站点仍有样式缺口"
+    },
+    {
+      "delivery_id": "DLV-106",
+      "project_code": "PJT-2611",
+      "milestone": "订单中心联调",
+      "owner": "陈墨",
+      "due_date": "2026-05-17",
+      "days_to_due": 16,
+      "priority": "P1",
+      "completion": 51,
+      "health": "黄",
+      "acceptance_status": "待开始",
+      "note": "外部系统联调计划未锁定"
+    },
+    {
+      "delivery_id": "DLV-107",
+      "project_code": "PJT-2605",
+      "milestone": "知识库联调",
+      "owner": "马会",
+      "due_date": "2026-05-18",
+      "days_to_due": 17,
+      "priority": "P1",
+      "completion": 63,
+      "health": "绿",
+      "acceptance_status": "推进中",
+      "note": "业务侧支持积极"
+    },
+    {
+      "delivery_id": "DLV-108",
+      "project_code": "PJT-2612",
+      "milestone": "蓝图评审",
+      "owner": "温齐",
+      "due_date": "2026-06-10",
+      "days_to_due": 40,
+      "priority": "P2",
+      "completion": 24,
+      "health": "绿",
+      "acceptance_status": "资料准备中",
+      "note": "需求澄清按计划推进"
+    }
+  ],
+  "action_board": [
+    {
+      "topic": "制造二期缺陷清零",
+      "owner": "许维",
+      "impact_area": "交付",
+      "due_date": "2026-05-04",
+      "days_to_due": 3,
+      "progress": 78,
+      "status": "高优先级",
+      "expected_gain": "按期完成验收"
+    },
+    {
+      "topic": "海外门户前端资源补位",
+      "owner": "李硕",
+      "impact_area": "交付",
+      "due_date": "2026-05-05",
+      "days_to_due": 4,
+      "progress": 64,
+      "status": "推进中",
+      "expected_gain": "多语言验收风险下降"
+    },
+    {
+      "topic": "金融项目安全测评排期锁定",
+      "owner": "唐笙",
+      "impact_area": "交付",
+      "due_date": "2026-05-07",
+      "days_to_due": 6,
+      "progress": 53,
+      "status": "推进中",
+      "expected_gain": "避免项目延期 2 周"
+    },
+    {
+      "topic": "华东能源回款推进",
+      "owner": "林皓",
+      "impact_area": "现金流",
+      "due_date": "2026-05-08",
+      "days_to_due": 7,
+      "progress": 71,
+      "status": "推进中",
+      "expected_gain": "回款 180 万"
+    },
+    {
+      "topic": "B2B 平台 ERP 联调窗口锁定",
+      "owner": "陈墨",
+      "impact_area": "交付",
+      "due_date": "2026-05-09",
+      "days_to_due": 8,
+      "progress": 44,
+      "status": "推进中",
+      "expected_gain": "保障订单中心联调开始"
+    }
+  ],
+  "alerts": [
+    {
+      "level": "critical",
+      "title": "智造工厂可视化二期 需要经营介入",
+      "detail": "P0 / 验收中 / 最终验收，阻塞：现场稳定性缺陷未关闭",
+      "owner": "许维",
+      "due_date": "2026-05-06"
+    },
+    {
+      "level": "critical",
+      "title": "DLV-101 临近交付窗口",
+      "detail": "最终验收 82%，当前状态 待客户验收。",
+      "owner": "许维",
+      "due_date": "2026-05-06"
+    },
+    {
+      "level": "critical",
+      "title": "智慧园区一体机 需要经营介入",
+      "detail": "P0 / 暂停 / 甲方预算重审，阻塞：客户预算冻结",
+      "owner": "周岭",
+      "due_date": "2026-06-02"
+    },
+    {
+      "level": "warning",
+      "title": "DLV-102 临近交付窗口",
+      "detail": "二批应用切换 74%，当前状态 预演中。",
+      "owner": "林皓",
+      "due_date": "2026-05-09"
+    },
+    {
+      "level": "warning",
+      "title": "DLV-104 临近交付窗口",
+      "detail": "培训交付 88%，当前状态 待排课。",
+      "owner": "赵屿",
+      "due_date": "2026-05-11"
+    },
+    {
+      "level": "attention",
+      "title": "海外门户前端资源补位",
+      "detail": "推进中，预计收益：多语言验收风险下降。",
+      "owner": "李硕",
+      "due_date": "2026-05-05"
+    },
+    {
+      "level": "attention",
+      "title": "金融项目安全测评排期锁定",
+      "detail": "推进中，预计收益：避免项目延期 2 周。",
+      "owner": "唐笙",
+      "due_date": "2026-05-07"
+    }
+  ],
+  "source_tables": [
+    {
+      "name": "项目台账",
+      "table_id": "tbl_project_register",
+      "shape": "普通表格",
+      "row_count": 12,
+      "field_count": 16,
+      "updated_at": "2026-05-01T12:36:00+08:00",
+      "sync_mode": "Webhook / 定时轮询可替换"
+    },
+    {
+      "name": "交付重点跟踪",
+      "table_id": "tbl_delivery_watchlist",
+      "shape": "普通表格",
+      "row_count": 8,
+      "field_count": 11,
+      "updated_at": "2026-05-01T12:34:00+08:00",
+      "sync_mode": "Webhook / 定时轮询可替换"
+    },
+    {
+      "name": "经营动作清单",
+      "table_id": "tbl_action_register",
+      "shape": "普通表格",
+      "row_count": 7,
+      "field_count": 9,
+      "updated_at": "2026-05-01T12:32:00+08:00",
+      "sync_mode": "Webhook / 定时轮询可替换"
+    },
+    {
+      "name": "财务经营立方",
+      "table_id": "cube_finance_actuals",
+      "shape": "多维表格",
+      "row_count": 24,
+      "field_count": 7,
+      "updated_at": "2026-05-01T12:38:00+08:00",
+      "sync_mode": "立方聚合 / 指标透视"
+    }
+  ],
+  "activity": [
+    {
+      "time": "12:16",
+      "source": "财务经营立方",
+      "title": "4 月回款口径补录",
+      "detail": "SaaS 订阅与解决方案两条业务线更新了本周实收。",
+      "tone": "teal"
+    },
+    {
+      "time": "12:09",
+      "source": "交付重点跟踪",
+      "title": "制造二期验收风险升高",
+      "detail": "DLV-101 缺陷关闭率未达标，预警升为红色。",
+      "tone": "red"
+    },
+    {
+      "time": "11:58",
+      "source": "项目台账",
+      "title": "金融私有化部署推进到 57%",
+      "detail": "项目已完成环境部署，进入安全测评前准备。",
+      "tone": "amber"
+    },
+    {
+      "time": "11:41",
+      "source": "经营动作清单",
+      "title": "海外门户资源补位方案更新",
+      "detail": "新增外包前端候选，预计下周释放联调风险。",
+      "tone": "slate"
+    }
+  ],
+  "architecture": [
+    "飞书普通表格",
+    "飞书多维表格",
+    "聚合中间层",
+    "SSE 实时看板"
+  ]
+}
