@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>星火履约经营看板</title>
+    <meta
+      name="description"
+      content="基于离线履约 Excel 导入生成的经营看板，覆盖交付节奏、业务结构、风险应收、营销牵引和重点跟踪。"
+    >
+    <link rel="stylesheet" href="./styles.css">
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Spark Fulfillment Command Deck</p>
+          <h1 id="page-title">星火履约经营看板</h1>
+          <p class="hero-text">
+            基于离线 Excel 导入的公开预览版经营驾驶舱，重点观察确收转化、回款压力、组织负荷与重点项目风险。
+          </p>
+          <div class="hero-meta" id="hero-meta">正在载入数据...</div>
+        </div>
+        <div class="hero-metrics" id="hero-metrics"></div>
+      </header>
+
+      <main class="content">
+        <section class="kpi-grid" id="kpi-grid"></section>
+
+        <section class="panel-grid panel-grid-wide">
+          <article class="panel panel-span-2">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Delivery Rhythm</p>
+                <h2>月度确收与回款节奏</h2>
+              </div>
+              <p class="panel-note">计划、最新预测、实际达成、回款压力统一观察</p>
+            </div>
+            <div class="metric-strip" id="trend-summary"></div>
+            <div class="trend-chart" id="trend-chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Status</p>
+                <h2>项目状态与风险密度</h2>
+              </div>
+            </div>
+            <div class="status-columns" id="status-breakdown"></div>
+          </article>
+        </section>
+
+        <section class="panel-grid">
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Structure</p>
+                <h2>业务单元经营结构</h2>
+              </div>
+            </div>
+            <div id="business-unit-chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Load</p>
+                <h2>交付部门负荷</h2>
+              </div>
+            </div>
+            <div id="delivery-dept-chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Portfolio</p>
+                <h2>产品家族分布</h2>
+              </div>
+            </div>
+            <div id="product-family-chart"></div>
+          </article>
+        </section>
+
+        <section class="panel-grid">
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Receivables</p>
+                <h2>OTC 应收账龄分层</h2>
+              </div>
+            </div>
+            <div id="aging-chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Receivables</p>
+                <h2>回款目标与履约类型</h2>
+              </div>
+            </div>
+            <div id="collection-matrix"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Marketing</p>
+                <h2>营销牵引概览</h2>
+              </div>
+            </div>
+            <div id="marketing-summary"></div>
+          </article>
+        </section>
+
+        <section class="panel-grid panel-grid-wide">
+          <article class="panel panel-span-2">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Focus</p>
+                <h2>重点项目跟踪</h2>
+              </div>
+              <p class="panel-note">公开版已脱敏，保留经营与风险维度</p>
+            </div>
+            <div id="focus-table"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Overdue</p>
+                <h2>高风险逾期合同</h2>
+              </div>
+            </div>
+            <div id="overdue-table"></div>
+          </article>
+        </section>
+
+        <section class="panel-grid">
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Customer Mix</p>
+                <h2>客群结构</h2>
+              </div>
+            </div>
+            <div id="customer-group-chart"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Marketing</p>
+                <h2>营销团队排行</h2>
+              </div>
+            </div>
+            <div id="marketing-team-table"></div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="panel-kicker">Audit Trail</p>
+                <h2>数据源与发布说明</h2>
+              </div>
+            </div>
+            <div id="source-audit"></div>
+          </article>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p id="footer-note">
+          页面数据来自用户提供的履约台账 Excel，经脚本清洗和脱敏后生成。
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>

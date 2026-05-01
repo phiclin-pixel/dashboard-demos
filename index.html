@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>飞书多维表格看板 Demo 合集</title>
+<title>经营看板 Demo 合集</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
     color: #e2e8f0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-family: "IBM Plex Sans SC", "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
     min-height: 100vh;
     display: flex; flex-direction: column; align-items: center; justify-content: center;
     padding: 40px;
@@ -49,8 +49,8 @@
 </style>
 </head>
 <body>
-  <div class="title">📊 飞书多维表格监控看板 Demo</div>
-  <div class="subtitle">基于 HTML5 + ECharts 的经营数据可视化看板模板</div>
+  <div class="title">📊 经营看板 Demo 合集</div>
+  <div class="subtitle">覆盖静态分析页、飞书表格原型和基于真实离线台账导入的经营看板</div>
   
   <div class="cards">
     <a class="card" href="dashboard-1-overview.html" target="_blank">
@@ -107,10 +107,21 @@
         <span class="tag">SSE</span>
       </div>
     </a>
+
+    <a class="card" href="spark-fulfillment-dashboard/index.html" target="_blank">
+      <div class="emoji">🧭</div>
+      <h2>星火履约经营看板</h2>
+      <p>基于真实离线履约 Excel 导入生成的公开预览版，覆盖确收节奏、组织结构、应收风险、营销牵引和重点项目跟踪。</p>
+      <div class="tags">
+        <span class="tag">真实台账</span>
+        <span class="tag">离线导入</span>
+        <span class="tag">脱敏发布</span>
+      </div>
+    </a>
   </div>
   
   <div class="footer">
-    所有数据均为模拟数据，仅用于展示看板效果 · 可对接飞书多维表格 API 替换为真实数据
+    当前合集同时包含模拟数据原型与真实离线台账导入版 · 公开页面已对敏感标识做脱敏处理
   </div>
 </body>
 </html>

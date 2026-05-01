@@ -1,0 +1,1752 @@
+{
+  "meta": {
+    "title": "星火履约经营看板",
+    "source_file": "xinghuo-fulfillment-tracking.xlsx",
+    "generated_at": "2026-05-01T21:59:13",
+    "as_of_hint": "合同履约台账2026-04-30",
+    "source_sheets": [
+      {
+        "name": "2.1在途交付项目清单",
+        "dimension": "A1:DI3550",
+        "rows": 3550,
+        "columns": 113
+      },
+      {
+        "name": "(勿删)OTC履约数据",
+        "dimension": "A1:CE13273",
+        "rows": 13273,
+        "columns": 83
+      },
+      {
+        "name": "营销（勿删）",
+        "dimension": "A1:AV2600",
+        "rows": 2600,
+        "columns": 48
+      },
+      {
+        "name": "第一曲线",
+        "dimension": "A1:BQ54",
+        "rows": 54,
+        "columns": 69
+      }
+    ],
+    "public_notice": "该页面由离线 Excel 导入生成，已按公开预览场景做脱敏和指标汇总。"
+  },
+  "kpis": [
+    {
+      "label": "在途项目",
+      "value": 888,
+      "display": "888 个",
+      "detail": "覆盖客户 450 家，付款节点 2977 条",
+      "tone": "teal"
+    },
+    {
+      "label": "军团重点 / 暂停项目",
+      "value": 14,
+      "display": "14 / 100",
+      "detail": "重点项目 14 个，暂停项目 100 个",
+      "tone": "amber"
+    },
+    {
+      "label": "基准回款金额",
+      "value": 184697.2572193,
+      "display": "18.47 亿",
+      "detail": "已回款 8.33 亿，回款率 45.1%",
+      "tone": "ink"
+    },
+    {
+      "label": "在途应收余额",
+      "value": 101372.3008353,
+      "display": "10.14 亿",
+      "detail": "到期欠款 2.06 亿，待转化交易款 7.35 亿",
+      "tone": "rose"
+    },
+    {
+      "label": "OTC履约应收余额",
+      "value": 194252.377237,
+      "display": "19.43 亿",
+      "detail": "到期欠款 2.43 亿，合同数 3001 个",
+      "tone": "slate"
+    },
+    {
+      "label": "中高风险项目",
+      "value": 156,
+      "display": "156 个",
+      "detail": "高(冲刺) 53 个，中风险 103 个",
+      "tone": "critical"
+    }
+  ],
+  "trend": [
+    {
+      "month": "1月",
+      "plan": 1175.24,
+      "forecast": 1175.51,
+      "actual": 904.54,
+      "collection": 0.0
+    },
+    {
+      "month": "2月",
+      "plan": 2707.55,
+      "forecast": 2531.34,
+      "actual": 1608.76,
+      "collection": 0.0
+    },
+    {
+      "month": "3月",
+      "plan": 5276.18,
+      "forecast": 5322.84,
+      "actual": 4407.42,
+      "collection": 0.0
+    },
+    {
+      "month": "4月",
+      "plan": 2671.35,
+      "forecast": 2636.54,
+      "actual": 1309.76,
+      "collection": 1353.26
+    },
+    {
+      "month": "5月",
+      "plan": 2864.81,
+      "forecast": 2771.07,
+      "actual": 0.0,
+      "collection": 6125.21
+    },
+    {
+      "month": "6月",
+      "plan": 8911.71,
+      "forecast": 7857.33,
+      "actual": 0.0,
+      "collection": 4632.03
+    },
+    {
+      "month": "7月",
+      "plan": 1988.94,
+      "forecast": 1290.09,
+      "actual": 0.0,
+      "collection": 2426.83
+    },
+    {
+      "month": "8月",
+      "plan": 1641.44,
+      "forecast": 1735.49,
+      "actual": 0.0,
+      "collection": 1488.07
+    },
+    {
+      "month": "9月",
+      "plan": 6174.13,
+      "forecast": 6124.97,
+      "actual": 0.0,
+      "collection": 3669.88
+    },
+    {
+      "month": "10月",
+      "plan": 1603.93,
+      "forecast": 1740.16,
+      "actual": 0.0,
+      "collection": 3389.34
+    },
+    {
+      "month": "11月",
+      "plan": 1044.39,
+      "forecast": 936.33,
+      "actual": 0.0,
+      "collection": 1880.1
+    },
+    {
+      "month": "12月",
+      "plan": 14964.27,
+      "forecast": 14016.3,
+      "actual": 0.0,
+      "collection": 3792.51
+    }
+  ],
+  "status_breakdown": {
+    "project_status": [
+      {
+        "name": "执行中",
+        "value": 512
+      },
+      {
+        "name": "已结项",
+        "value": 146
+      },
+      {
+        "name": "维保中",
+        "value": 117
+      },
+      {
+        "name": "暂停",
+        "value": 100
+      },
+      {
+        "name": "未立项",
+        "value": 12
+      },
+      {
+        "name": "未标注",
+        "value": 1
+      }
+    ],
+    "node_status": [
+      {
+        "name": "已完结",
+        "value": 586
+      },
+      {
+        "name": "交付中",
+        "value": 153
+      },
+      {
+        "name": "已交付未回款",
+        "value": 136
+      },
+      {
+        "name": "待冲销收入",
+        "value": 6
+      },
+      {
+        "name": "合同作废",
+        "value": 5
+      },
+      {
+        "name": "节点作废",
+        "value": 1
+      },
+      {
+        "name": "/",
+        "value": 1
+      }
+    ],
+    "risk_degree": [
+      {
+        "name": "未标注",
+        "value": 694
+      },
+      {
+        "name": "中",
+        "value": 103
+      },
+      {
+        "name": "高(冲刺)",
+        "value": 53
+      },
+      {
+        "name": "低",
+        "value": 38
+      }
+    ]
+  },
+  "business_unit_rank": [
+    {
+      "name": "金融",
+      "project_count": 723,
+      "base_payment": 104115.59,
+      "paid_amount": 52254.57,
+      "ar_balance": 51801.37,
+      "due_amount": 12485.29,
+      "pending_conversion": 37202.62,
+      "recognized_amount": 103418.36,
+      "collection_rate": 50.2
+    },
+    {
+      "name": "央国企",
+      "project_count": 117,
+      "base_payment": 56093.25,
+      "paid_amount": 26864.22,
+      "ar_balance": 29229.03,
+      "due_amount": 7028.6,
+      "pending_conversion": 21755.49,
+      "recognized_amount": 55925.75,
+      "collection_rate": 47.9
+    },
+    {
+      "name": "数智运营",
+      "project_count": 28,
+      "base_payment": 18124.36,
+      "paid_amount": 1062.85,
+      "ar_balance": 17061.51,
+      "due_amount": 514.61,
+      "pending_conversion": 11943.48,
+      "recognized_amount": 18124.36,
+      "collection_rate": 5.9
+    },
+    {
+      "name": "保险经纪",
+      "project_count": 18,
+      "base_payment": 5680.33,
+      "paid_amount": 2718.23,
+      "ar_balance": 2962.11,
+      "due_amount": 593.97,
+      "pending_conversion": 2367.45,
+      "recognized_amount": 5680.33,
+      "collection_rate": 47.9
+    },
+    {
+      "name": "公共",
+      "project_count": 3,
+      "base_payment": 380.38,
+      "paid_amount": 154.98,
+      "ar_balance": 225.4,
+      "due_amount": 0.0,
+      "pending_conversion": 147.4,
+      "recognized_amount": 380.38,
+      "collection_rate": 40.7
+    },
+    {
+      "name": "商城业务",
+      "project_count": 4,
+      "base_payment": 303.36,
+      "paid_amount": 210.46,
+      "ar_balance": 92.9,
+      "due_amount": 23.06,
+      "pending_conversion": 48.14,
+      "recognized_amount": 303.36,
+      "collection_rate": 69.4
+    }
+  ],
+  "delivery_dept_rank": [
+    {
+      "name": "金融系统部交付部",
+      "project_count": 641,
+      "base_payment": 93506.08,
+      "paid_amount": 47431.78,
+      "ar_balance": 46014.65,
+      "recognized_amount": 92802.39,
+      "collection_rate": 50.7
+    },
+    {
+      "name": "行业交付部",
+      "project_count": 59,
+      "base_payment": 32742.45,
+      "paid_amount": 14993.85,
+      "ar_balance": 17748.6,
+      "recognized_amount": 32739.95,
+      "collection_rate": 45.8
+    },
+    {
+      "name": "油气系统部",
+      "project_count": 50,
+      "base_payment": 20713.0,
+      "paid_amount": 10847.62,
+      "ar_balance": 9865.38,
+      "recognized_amount": 20548.0,
+      "collection_rate": 52.4
+    },
+    {
+      "name": "数智运营产品线产品二部",
+      "project_count": 33,
+      "base_payment": 19326.75,
+      "paid_amount": 1689.06,
+      "ar_balance": 17637.69,
+      "recognized_amount": 19326.75,
+      "collection_rate": 8.7
+    },
+    {
+      "name": "业务运营中心",
+      "project_count": 85,
+      "base_payment": 11767.05,
+      "paid_amount": 5015.12,
+      "ar_balance": 6751.93,
+      "recognized_amount": 11773.51,
+      "collection_rate": 42.6
+    },
+    {
+      "name": "保险及商城运营部-保险",
+      "project_count": 18,
+      "base_payment": 5680.33,
+      "paid_amount": 2718.23,
+      "ar_balance": 2962.11,
+      "recognized_amount": 5680.33,
+      "collection_rate": 47.9
+    },
+    {
+      "name": "金融异常",
+      "project_count": 4,
+      "base_payment": 431.7,
+      "paid_amount": 395.4,
+      "ar_balance": 36.3,
+      "recognized_amount": 431.7,
+      "collection_rate": 91.6
+    },
+    {
+      "name": "军团公共",
+      "project_count": 3,
+      "base_payment": 276.57,
+      "paid_amount": 120.57,
+      "ar_balance": 156.0,
+      "recognized_amount": 276.57,
+      "collection_rate": 43.6
+    },
+    {
+      "name": "保险及商城运营部-商城",
+      "project_count": 4,
+      "base_payment": 116.77,
+      "paid_amount": 24.93,
+      "ar_balance": 91.84,
+      "recognized_amount": 116.77,
+      "collection_rate": 21.4
+    },
+    {
+      "name": "#N/A",
+      "project_count": 1,
+      "base_payment": 72.8,
+      "paid_amount": 0.0,
+      "ar_balance": 72.8,
+      "recognized_amount": 72.8,
+      "collection_rate": 0.0
+    }
+  ],
+  "customer_group_rank": [
+    {
+      "name": "金融",
+      "project_count": 522,
+      "base_payment": 70543.52,
+      "recognized_amount": 70350.89,
+      "ar_balance": 38087.2
+    },
+    {
+      "name": "非金",
+      "project_count": 202,
+      "base_payment": 33572.07,
+      "recognized_amount": 33067.47,
+      "ar_balance": 13714.17
+    },
+    {
+      "name": "未分组",
+      "project_count": 54,
+      "base_payment": 25379.96,
+      "recognized_amount": 25212.46,
+      "ar_balance": 21233.45
+    },
+    {
+      "name": "央国企其他",
+      "project_count": 45,
+      "base_payment": 24205.16,
+      "recognized_amount": 24205.16,
+      "ar_balance": 10545.18
+    },
+    {
+      "name": "油气",
+      "project_count": 39,
+      "base_payment": 19491.5,
+      "recognized_amount": 19491.5,
+      "ar_balance": 9470.41
+    },
+    {
+      "name": "冶金",
+      "project_count": 12,
+      "base_payment": 5466.59,
+      "recognized_amount": 5466.59,
+      "ar_balance": 3968.37
+    },
+    {
+      "name": "航司",
+      "project_count": 11,
+      "base_payment": 3486.71,
+      "recognized_amount": 3486.71,
+      "ar_balance": 2825.24
+    },
+    {
+      "name": "农粮",
+      "project_count": 5,
+      "base_payment": 1145.0,
+      "recognized_amount": 1145.0,
+      "ar_balance": 728.3
+    },
+    {
+      "name": "陆运",
+      "project_count": 3,
+      "base_payment": 1059.25,
+      "recognized_amount": 1059.25,
+      "ar_balance": 452.49
+    },
+    {
+      "name": "行业",
+      "project_count": 1,
+      "base_payment": 290.5,
+      "recognized_amount": 290.5,
+      "ar_balance": 290.5
+    }
+  ],
+  "product_family_rank": [
+    {
+      "name": "智能客服",
+      "project_count": 415,
+      "recognized_amount": 85401.25,
+      "ar_balance": 45600.97
+    },
+    {
+      "name": "营销助手",
+      "project_count": 164,
+      "recognized_amount": 35462.47,
+      "ar_balance": 23375.02
+    },
+    {
+      "name": "智能语音",
+      "project_count": 162,
+      "recognized_amount": 26647.58,
+      "ar_balance": 20008.72
+    },
+    {
+      "name": "知识运营",
+      "project_count": 59,
+      "recognized_amount": 33556.14,
+      "ar_balance": 30071.12
+    },
+    {
+      "name": "底座",
+      "project_count": 25,
+      "recognized_amount": 37925.28,
+      "ar_balance": 22927.02
+    },
+    {
+      "name": "保险",
+      "project_count": 18,
+      "recognized_amount": 19167.94,
+      "ar_balance": 16137.66
+    },
+    {
+      "name": "行业大师",
+      "project_count": 15,
+      "recognized_amount": 19024.05,
+      "ar_balance": 16839.87
+    },
+    {
+      "name": "商城业务",
+      "project_count": 4,
+      "recognized_amount": 13640.25,
+      "ar_balance": 13187.15
+    },
+    {
+      "name": "审核平台",
+      "project_count": 0,
+      "recognized_amount": 0,
+      "ar_balance": 0
+    }
+  ],
+  "aging_summary": [
+    {
+      "name": "正常交付款",
+      "value": 56437.37
+    },
+    {
+      "name": "其他",
+      "value": 25424.44
+    },
+    {
+      "name": "逾期6个月内",
+      "value": 6184.38
+    },
+    {
+      "name": "逾期6-12个月",
+      "value": 2300.84
+    },
+    {
+      "name": "延期交付款",
+      "value": 1780.16
+    },
+    {
+      "name": "逾期12-18个月",
+      "value": 1697.05
+    },
+    {
+      "name": "逾期24个月以上",
+      "value": 1660.75
+    },
+    {
+      "name": "未到期",
+      "value": 1443.32
+    },
+    {
+      "name": "当月到期",
+      "value": 829.39
+    },
+    {
+      "name": "逾期18-24个月",
+      "value": 236.12
+    }
+  ],
+  "collection_status_counts": [
+    {
+      "name": "回款已完成",
+      "value": 2273
+    },
+    {
+      "name": "回款未完成",
+      "value": 2056
+    }
+  ],
+  "include_target_counts": [
+    {
+      "name": "否",
+      "value": 4091
+    },
+    {
+      "name": "是",
+      "value": 238
+    }
+  ],
+  "delivery_type_counts": [
+    {
+      "name": "项目建设型",
+      "value": 2658
+    },
+    {
+      "name": "维保型",
+      "value": 605
+    },
+    {
+      "name": "运营型",
+      "value": 267
+    },
+    {
+      "name": "订单型",
+      "value": 83
+    }
+  ],
+  "marketing_team_rank": [
+    {
+      "group": "营销决策产品线",
+      "team": "业务运营中心",
+      "overall_base": 6690.4189,
+      "overall_done": 1049.831864,
+      "overall_rate": 15.6915714799263,
+      "overall_cash": 688.427731,
+      "overall_cash_rate": 65.5750463104633,
+      "overall_forecast": 4096.4810605,
+      "overall_forecast_rate": 61.2290668451268,
+      "bf_base": 758.068586,
+      "bf_forecast": 587.2399625,
+      "bf_done": 436.878756,
+      "stock_base": 4117.257978,
+      "stock_forecast": 3314.064578,
+      "stock_done": 598.886668,
+      "incremental_base": 1815.092336,
+      "incremental_forecast": 195.17652,
+      "incremental_done": 14.06644
+    },
+    {
+      "group": "存客",
+      "team": "战客一部",
+      "overall_base": 3662.67215,
+      "overall_done": 672.743324,
+      "overall_rate": 18.3675550649544,
+      "overall_cash": 478.427731,
+      "overall_cash_rate": 71.1159388628879,
+      "overall_forecast": 1953.3946705,
+      "overall_forecast_rate": 53.332501258678,
+      "bf_base": 605.041886,
+      "bf_forecast": 544.6248625,
+      "bf_done": 436.878756,
+      "stock_base": 1493.692728,
+      "stock_forecast": 1235.499728,
+      "stock_done": 235.864568,
+      "incremental_base": 1563.937536,
+      "incremental_forecast": 173.27008,
+      "incremental_done": 0.0
+    },
+    {
+      "group": "存客",
+      "team": "区域银行",
+      "overall_base": 1026.67225,
+      "overall_done": 17.81104,
+      "overall_rate": 1.73483212388374,
+      "overall_cash": 0.0,
+      "overall_cash_rate": 0.0,
+      "overall_forecast": 303.36189,
+      "overall_forecast_rate": 29.5480753473175,
+      "bf_base": 122.5772,
+      "bf_forecast": 12.1656,
+      "bf_done": 0.0,
+      "stock_base": 664.14025,
+      "stock_forecast": 280.48985,
+      "stock_done": 7.1046,
+      "incremental_base": 239.9548,
+      "incremental_forecast": 10.70644,
+      "incremental_done": 10.70644
+    },
+    {
+      "group": "行业大师",
+      "team": "央国企销售二部",
+      "overall_base": 900.0,
+      "overall_done": 180.0,
+      "overall_rate": 20.0,
+      "overall_cash": 180.0,
+      "overall_cash_rate": 100.0,
+      "overall_forecast": 855.0,
+      "overall_forecast_rate": 95.0,
+      "bf_base": 0.0,
+      "bf_forecast": 0.0,
+      "bf_done": 0.0,
+      "stock_base": 900.0,
+      "stock_forecast": 855.0,
+      "stock_done": 180.0,
+      "incremental_base": 0.0,
+      "incremental_forecast": 0.0,
+      "incremental_done": 0.0
+    },
+    {
+      "group": "存客",
+      "team": "战客二部",
+      "overall_base": 394.4495,
+      "overall_done": 0.0,
+      "overall_rate": 0.0,
+      "overall_cash": 0.0,
+      "overall_cash_rate": 0.0,
+      "overall_forecast": 342.4495,
+      "overall_forecast_rate": 86.81707037276,
+      "bf_base": 30.4495,
+      "bf_forecast": 30.4495,
+      "bf_done": 0.0,
+      "stock_base": 364.0,
+      "stock_forecast": 312.0,
+      "stock_done": 0.0,
+      "incremental_base": 0.0,
+      "incremental_forecast": 0.0,
+      "incremental_done": 0.0
+    },
+    {
+      "group": "行业大师",
+      "team": "央国企销售五部",
+      "overall_base": 290.5,
+      "overall_done": 124.5,
+      "overall_rate": 42.8571428571429,
+      "overall_cash": 0.0,
+      "overall_cash_rate": 0.0,
+      "overall_forecast": 269.75,
+      "overall_forecast_rate": 92.8571428571429,
+      "bf_base": 0.0,
+      "bf_forecast": 0.0,
+      "bf_done": 0.0,
+      "stock_base": 290.5,
+      "stock_forecast": 269.75,
+      "stock_done": 124.5,
+      "incremental_base": 0.0,
+      "incremental_forecast": 0.0,
+      "incremental_done": 0.0
+    },
+    {
+      "group": "行业大师",
+      "team": "央国企销售三部",
+      "overall_base": 190.4,
+      "overall_done": 0.0,
+      "overall_rate": 0.0,
+      "overall_cash": 0.0,
+      "overall_cash_rate": 0.0,
+      "overall_forecast": 163.2,
+      "overall_forecast_rate": 85.7142857142857,
+      "bf_base": 0.0,
+      "bf_forecast": 0.0,
+      "bf_done": 0.0,
+      "stock_base": 190.4,
+      "stock_forecast": 163.2,
+      "stock_done": 0.0,
+      "incremental_base": 0.0,
+      "incremental_forecast": 0.0,
+      "incremental_done": 0.0
+    },
+    {
+      "group": "央国企销售二部",
+      "team": "吴振江",
+      "overall_base": 180.0,
+      "overall_done": 0.0,
+      "overall_rate": 0.0,
+      "overall_cash": 0.0,
+      "overall_cash_rate": 0.0,
+      "overall_forecast": 0.0,
+      "overall_forecast_rate": 0.0,
+      "bf_base": 0.0,
+      "bf_forecast": 0.0,
+      "bf_done": 0.0,
+      "stock_base": 0.0,
+      "stock_forecast": 0.0,
+      "stock_done": 0.0,
+      "incremental_base": 0.0,
+      "incremental_forecast": 0.0,
+      "incremental_done": 0.0
+    },
+    {
+      "group": "存客",
+      "team": "非银金融",
+      "overall_base": 165.725,
+      "overall_done": 54.7775,
+      "overall_rate": 33.0532508674008,
+      "overall_cash": 30.0,
+      "overall_cash_rate": 54.7670120031035,
+      "overall_forecast": 161.325,
+      "overall_forecast_rate": 97.34499924573839,
+      "bf_base": 0.0,
+      "bf_forecast": 0.0,
+      "bf_done": 0.0,
+      "stock_base": 154.525,
+      "stock_forecast": 150.125,
+      "stock_done": 51.4175,
+      "incremental_base": 11.2,
+      "incremental_forecast": 11.2,
+      "incremental_done": 3.36
+    },
+    {
+      "group": "存客",
+      "team": "非金",
+      "overall_base": 60.0,
+      "overall_done": 0.0,
+      "overall_rate": 0.0,
+      "overall_cash": 0.0,
+      "overall_cash_rate": 0.0,
+      "overall_forecast": 48.0,
+      "overall_forecast_rate": 80.0,
+      "bf_base": 0.0,
+      "bf_forecast": 0.0,
+      "bf_done": 0.0,
+      "stock_base": 60.0,
+      "stock_forecast": 48.0,
+      "stock_done": 0.0,
+      "incremental_base": 0.0,
+      "incremental_forecast": 0.0,
+      "incremental_done": 0.0
+    },
+    {
+      "group": "战客一部",
+      "team": "杨坤",
+      "overall_base": 54.804516,
+      "overall_done": 0.0,
+      "overall_rate": 1247.6531,
+      "overall_cash": 87.993417,
+      "overall_cash_rate": 0.0,
+      "overall_forecast": 0.0,
+      "overall_forecast_rate": 0.0,
+      "bf_base": 0.0,
+      "bf_forecast": 0.0,
+      "bf_done": 0.0,
+      "stock_base": 0.0,
+      "stock_forecast": 0.0,
+      "stock_done": 0.0,
+      "incremental_base": 0.0,
+      "incremental_forecast": 0.0,
+      "incremental_done": 0.0
+    },
+    {
+      "group": "区域银行",
+      "team": "王飞5",
+      "overall_base": 8.56104,
+      "overall_done": 0.0,
+      "overall_rate": 0.0,
+      "overall_cash": 0.0,
+      "overall_cash_rate": 0.0,
+      "overall_forecast": 0.0,
+      "overall_forecast_rate": 0.0,
+      "bf_base": 0.0,
+      "bf_forecast": 0.0,
+      "bf_done": 0.0,
+      "stock_base": 0.0,
+      "stock_forecast": 0.0,
+      "stock_done": 0.0,
+      "incremental_base": 0.0,
+      "incremental_forecast": 0.0,
+      "incremental_done": 0.0
+    },
+    {
+      "group": "战客一部",
+      "team": "王飞5",
+      "overall_base": 3.75,
+      "overall_done": 0.0,
+      "overall_rate": 32732.082300000002,
+      "overall_cash": 26.4,
+      "overall_cash_rate": 0.0,
+      "overall_forecast": 0.0,
+      "overall_forecast_rate": 0.0,
+      "bf_base": 0.0,
+      "bf_forecast": 0.0,
+      "bf_done": 0.0,
+      "stock_base": 0.0,
+      "stock_forecast": 0.0,
+      "stock_done": 0.0,
+      "incremental_base": 0.0,
+      "incremental_forecast": 0.0,
+      "incremental_done": 0.0
+    },
+    {
+      "group": "非银金融",
+      "team": "王飞5",
+      "overall_base": 0.95,
+      "overall_done": 0.0,
+      "overall_rate": 0.0,
+      "overall_cash": 0.0,
+      "overall_cash_rate": 0.0,
+      "overall_forecast": 0.0,
+      "overall_forecast_rate": 0.0,
+      "bf_base": 0.0,
+      "bf_forecast": 0.0,
+      "bf_done": 0.0,
+      "stock_base": 0.0,
+      "stock_forecast": 0.0,
+      "stock_done": 0.0,
+      "incremental_base": 0.0,
+      "incremental_forecast": 0.0,
+      "incremental_done": 0.0
+    }
+  ],
+  "marketing_group_rank": [
+    {
+      "name": "营销决策产品线",
+      "overall_base": 6690.42,
+      "overall_done": 1049.83,
+      "overall_cash": 688.43,
+      "overall_forecast": 4096.48,
+      "overall_done_rate": 15.7,
+      "overall_forecast_rate": 61.2
+    },
+    {
+      "name": "存客",
+      "overall_base": 5309.52,
+      "overall_done": 745.33,
+      "overall_cash": 508.43,
+      "overall_forecast": 2808.53,
+      "overall_done_rate": 14.0,
+      "overall_forecast_rate": 52.9
+    },
+    {
+      "name": "行业大师",
+      "overall_base": 1380.9,
+      "overall_done": 304.5,
+      "overall_cash": 180.0,
+      "overall_forecast": 1287.95,
+      "overall_done_rate": 22.1,
+      "overall_forecast_rate": 93.3
+    },
+    {
+      "name": "央国企销售二部",
+      "overall_base": 180.0,
+      "overall_done": 0.0,
+      "overall_cash": 0.0,
+      "overall_forecast": 0.0,
+      "overall_done_rate": 0.0,
+      "overall_forecast_rate": 0.0
+    },
+    {
+      "name": "战客一部",
+      "overall_base": 58.55,
+      "overall_done": 48.41,
+      "overall_cash": 140.93,
+      "overall_forecast": 0.0,
+      "overall_done_rate": 82.7,
+      "overall_forecast_rate": 0.0
+    },
+    {
+      "name": "区域银行",
+      "overall_base": 8.56,
+      "overall_done": 0.0,
+      "overall_cash": 0.0,
+      "overall_forecast": 0.0,
+      "overall_done_rate": 0.0,
+      "overall_forecast_rate": 0.0
+    },
+    {
+      "name": "非银金融",
+      "overall_base": 0.95,
+      "overall_done": 30.0,
+      "overall_cash": 0.0,
+      "overall_forecast": 0.0,
+      "overall_done_rate": 3157.9,
+      "overall_forecast_rate": 0.0
+    }
+  ],
+  "focus_projects": [
+    {
+      "project_label": "20…项目",
+      "project_ref": "未标识",
+      "client_masked": "昆仑…公司",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "金融",
+      "project_status": "",
+      "node_status": "已完结",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "高风险",
+      "progress": 100.0,
+      "base_payment": 13640.34,
+      "paid_amount": 514.79,
+      "ar_balance": 13125.55,
+      "due_amount": 436.38,
+      "pending_conversion": 12689.03,
+      "recognized_amount": 13438.75,
+      "live_prediction_month": "4月",
+      "actual_month": "4月",
+      "baseline_month": "4月",
+      "milestone": "",
+      "pause_reason": "合同作废/终止",
+      "analysis_tag": "",
+      "product_flags": [
+        "保险",
+        "商城业务",
+        "底座",
+        "智能客服",
+        "智能语音",
+        "知识运营",
+        "营销助手",
+        "行业大师"
+      ],
+      "score": 5178089.71
+    },
+    {
+      "project_label": "D-2…0664",
+      "project_ref": "D-2…0664",
+      "client_masked": "讯飞…公司",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "非金",
+      "project_status": "暂停",
+      "node_status": "交付中",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "高风险",
+      "progress": 20.0,
+      "base_payment": 80.0,
+      "paid_amount": 0.0,
+      "ar_balance": 80.0,
+      "due_amount": 0.0,
+      "pending_conversion": 80.0,
+      "recognized_amount": 80.0,
+      "live_prediction_month": "9月",
+      "actual_month": "",
+      "baseline_month": "9月",
+      "milestone": "项目终验",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "智能客服"
+      ],
+      "score": 4704000.0
+    },
+    {
+      "project_label": "D-2…0706",
+      "project_ref": "D-2…0706",
+      "client_masked": "重庆…公司",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "金融",
+      "project_status": "执行中",
+      "node_status": "已交付未回款",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "高风险",
+      "progress": 30.0,
+      "base_payment": 340.0,
+      "paid_amount": 0.0,
+      "ar_balance": 340.0,
+      "due_amount": 102.0,
+      "pending_conversion": 238.0,
+      "recognized_amount": 340.0,
+      "live_prediction_month": "6月",
+      "actual_month": "1月",
+      "baseline_month": "6月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "智能客服"
+      ],
+      "score": 4522100.0
+    },
+    {
+      "project_label": "D-2…0287",
+      "project_ref": "D-2…0287",
+      "client_masked": "中国…公司",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "金融",
+      "project_status": "执行中",
+      "node_status": "已完结",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "高风险",
+      "progress": 50.0,
+      "base_payment": 298.0,
+      "paid_amount": 48.0,
+      "ar_balance": 250.0,
+      "due_amount": 0.0,
+      "pending_conversion": 250.0,
+      "recognized_amount": 298.0,
+      "live_prediction_month": "6月",
+      "actual_month": "",
+      "baseline_month": "6月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "其他",
+      "product_flags": [
+        "智能客服"
+      ],
+      "score": 4512500.0
+    },
+    {
+      "project_label": "D-2…0257",
+      "project_ref": "D-2…0257",
+      "client_masked": "中国…分行",
+      "business_unit": "金融",
+      "delivery_dept": "业务运营中心",
+      "customer_group": "金融",
+      "project_status": "执行中",
+      "node_status": "已交付未回款",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "高风险",
+      "progress": 0.0,
+      "base_payment": 110.8,
+      "paid_amount": 0.0,
+      "ar_balance": 110.8,
+      "due_amount": 33.24,
+      "pending_conversion": 77.56,
+      "recognized_amount": 110.8,
+      "live_prediction_month": "9月",
+      "actual_month": "4月",
+      "baseline_month": "4月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "营销助手"
+      ],
+      "score": 4507202.0
+    },
+    {
+      "project_label": "D-2…0288",
+      "project_ref": "D-2…0288",
+      "client_masked": "新疆…合社",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "金融",
+      "project_status": "执行中",
+      "node_status": "已交付未回款",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "高风险",
+      "progress": 30.0,
+      "base_payment": 49.98,
+      "paid_amount": 0.0,
+      "ar_balance": 49.98,
+      "due_amount": 14.99,
+      "pending_conversion": 34.99,
+      "recognized_amount": 49.98,
+      "live_prediction_month": "9月",
+      "actual_month": "",
+      "baseline_month": "9月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "智能客服"
+      ],
+      "score": 4503248.7
+    },
+    {
+      "project_label": "D-2…0065",
+      "project_ref": "D-2…0065",
+      "client_masked": "潍坊…公司",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "金融",
+      "project_status": "执行中",
+      "node_status": "已完结",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "高风险",
+      "progress": 30.0,
+      "base_payment": 50.0,
+      "paid_amount": 10.0,
+      "ar_balance": 40.0,
+      "due_amount": 0.0,
+      "pending_conversion": 40.0,
+      "recognized_amount": 50.0,
+      "live_prediction_month": "3月",
+      "actual_month": "",
+      "baseline_month": "3月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "智能语音"
+      ],
+      "score": 4502000.0
+    },
+    {
+      "project_label": "D-2…0317",
+      "project_ref": "D-2…0317",
+      "client_masked": "深圳…公司",
+      "business_unit": "金融",
+      "delivery_dept": "业务运营中心",
+      "customer_group": "金融",
+      "project_status": "执行中",
+      "node_status": "交付中",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "高风险",
+      "progress": 0.0,
+      "base_payment": 13.5,
+      "paid_amount": 0.0,
+      "ar_balance": 13.5,
+      "due_amount": 0.0,
+      "pending_conversion": 13.5,
+      "recognized_amount": 13.5,
+      "live_prediction_month": "6月",
+      "actual_month": "",
+      "baseline_month": "3月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "营销助手"
+      ],
+      "score": 4500675.0
+    },
+    {
+      "project_label": "D-2…0345",
+      "project_ref": "D-2…0345",
+      "client_masked": "迈威…公司",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "非金",
+      "project_status": "执行中",
+      "node_status": "已完结",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "高风险",
+      "progress": 0.0,
+      "base_payment": 12.3,
+      "paid_amount": 6.15,
+      "ar_balance": 6.15,
+      "due_amount": 0.0,
+      "pending_conversion": 6.15,
+      "recognized_amount": 12.3,
+      "live_prediction_month": "12月",
+      "actual_month": "",
+      "baseline_month": "12月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "智能语音"
+      ],
+      "score": 4500307.5
+    },
+    {
+      "project_label": "D-2…0883",
+      "project_ref": "D-2…0883",
+      "client_masked": "中国…公司",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "金融",
+      "project_status": "暂停",
+      "node_status": "已完结",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "中风险",
+      "progress": 20.0,
+      "base_payment": 39.45,
+      "paid_amount": 11.84,
+      "ar_balance": 27.61,
+      "due_amount": 27.61,
+      "pending_conversion": 0.0,
+      "recognized_amount": 39.45,
+      "live_prediction_month": "3月",
+      "actual_month": "3月",
+      "baseline_month": "3月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "智能客服"
+      ],
+      "score": 4202761.5
+    },
+    {
+      "project_label": "D-2…0311",
+      "project_ref": "D-2…0311",
+      "client_masked": "东亚…公司",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "金融",
+      "project_status": "暂停",
+      "node_status": "已完结",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "中风险",
+      "progress": 95.0,
+      "base_payment": 13.2,
+      "paid_amount": 3.96,
+      "ar_balance": 9.24,
+      "due_amount": 7.92,
+      "pending_conversion": 0.0,
+      "recognized_amount": 13.2,
+      "live_prediction_month": "12月",
+      "actual_month": "",
+      "baseline_month": "12月",
+      "milestone": "合同签订",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "智能客服"
+      ],
+      "score": 4200792.0
+    },
+    {
+      "project_label": "D-2…0878",
+      "project_ref": "D-2…0878",
+      "client_masked": "中国…分行",
+      "business_unit": "金融",
+      "delivery_dept": "业务运营中心",
+      "customer_group": "金融",
+      "project_status": "暂停",
+      "node_status": "已完结",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "中风险",
+      "progress": 95.0,
+      "base_payment": 12.72,
+      "paid_amount": 6.36,
+      "ar_balance": 6.36,
+      "due_amount": 6.36,
+      "pending_conversion": 0.0,
+      "recognized_amount": 12.72,
+      "live_prediction_month": "3月",
+      "actual_month": "2月",
+      "baseline_month": "3月",
+      "milestone": "运维中期结项",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "营销助手"
+      ],
+      "score": 4200636.0
+    },
+    {
+      "project_label": "D-2…0126",
+      "project_ref": "D-2…0126",
+      "client_masked": "辽宁…公司",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "金融",
+      "project_status": "执行中",
+      "node_status": "已交付未回款",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "中风险",
+      "progress": 30.0,
+      "base_payment": 401.61,
+      "paid_amount": 0.0,
+      "ar_balance": 401.61,
+      "due_amount": 120.48,
+      "pending_conversion": 281.13,
+      "recognized_amount": 401.61,
+      "live_prediction_month": "11月",
+      "actual_month": "",
+      "baseline_month": "11月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "智能客服",
+        "营销助手"
+      ],
+      "score": 4026104.65
+    },
+    {
+      "project_label": "D-2…0457",
+      "project_ref": "D-2…0457",
+      "client_masked": "上海…公司",
+      "business_unit": "金融",
+      "delivery_dept": "金融系统部交付部",
+      "customer_group": "金融",
+      "project_status": "执行中",
+      "node_status": "交付中",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "中风险",
+      "progress": 30.0,
+      "base_payment": 414.25,
+      "paid_amount": 0.0,
+      "ar_balance": 414.25,
+      "due_amount": 0.0,
+      "pending_conversion": 414.25,
+      "recognized_amount": 414.25,
+      "live_prediction_month": "2月",
+      "actual_month": "",
+      "baseline_month": "2月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "智能客服"
+      ],
+      "score": 4020712.5
+    },
+    {
+      "project_label": "D-2…0452",
+      "project_ref": "D-2…0452",
+      "client_masked": "兴业…公司",
+      "business_unit": "金融",
+      "delivery_dept": "业务运营中心",
+      "customer_group": "金融",
+      "project_status": "执行中",
+      "node_status": "已完结",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "中风险",
+      "progress": 50.0,
+      "base_payment": 520.0,
+      "paid_amount": 156.0,
+      "ar_balance": 364.0,
+      "due_amount": 0.0,
+      "pending_conversion": 364.0,
+      "recognized_amount": 520.0,
+      "live_prediction_month": "12月",
+      "actual_month": "",
+      "baseline_month": "8月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "营销助手"
+      ],
+      "score": 4018200.0
+    },
+    {
+      "project_label": "D-2…0837",
+      "project_ref": "D-2…0837",
+      "client_masked": "浙江…公司",
+      "business_unit": "金融",
+      "delivery_dept": "业务运营中心",
+      "customer_group": "金融",
+      "project_status": "执行中",
+      "node_status": "已完结",
+      "risk_degree": "高(冲刺)",
+      "receivable_risk_level": "中风险",
+      "progress": 80.0,
+      "base_payment": 327.8,
+      "paid_amount": 27.0,
+      "ar_balance": 300.8,
+      "due_amount": 27.0,
+      "pending_conversion": 273.8,
+      "recognized_amount": 327.8,
+      "live_prediction_month": "5月",
+      "actual_month": "",
+      "baseline_month": "5月",
+      "milestone": "",
+      "pause_reason": "",
+      "analysis_tag": "",
+      "product_flags": [
+        "营销助手"
+      ],
+      "score": 4016390.0
+    }
+  ],
+  "top_overdue_contracts": [
+    {
+      "contract_ref": "BJ18…2281",
+      "client_masked": "中电…公司",
+      "business_unit": "油气行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "是",
+      "delivery_type": "",
+      "ar_category": "到期欠款-逾期（≤6个月]",
+      "base_payment": 1072.03,
+      "paid_amount": 0.0,
+      "due_amount": 1072.03,
+      "not_due_amount": 0.0,
+      "ar_balance": 1072.03,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 3.5,
+      "max_overdue_months": 2.1
+    },
+    {
+      "contract_ref": "12c2…S001",
+      "client_masked": "新奥…公司",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "否",
+      "delivery_type": "项目建设型",
+      "ar_category": "到期欠款-逾期（≤6个月]",
+      "base_payment": 1040.0,
+      "paid_amount": 416.0,
+      "due_amount": 624.0,
+      "not_due_amount": 0.0,
+      "ar_balance": 624.0,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 3.5,
+      "max_overdue_months": 2.5
+    },
+    {
+      "contract_ref": "04c2…S001",
+      "client_masked": "北京…公司",
+      "business_unit": "央国企",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "否",
+      "delivery_type": "",
+      "ar_category": "到期欠款-逾期（≤6个月]",
+      "base_payment": 1870.95,
+      "paid_amount": 1407.9,
+      "due_amount": 463.05,
+      "not_due_amount": 0.0,
+      "ar_balance": 463.05,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 4.0,
+      "max_overdue_months": 3.1
+    },
+    {
+      "contract_ref": "105O…S001",
+      "client_masked": "湖南…公司",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "否",
+      "delivery_type": "运营型",
+      "ar_category": "到期欠款-逾期（≤6个月]",
+      "base_payment": 373.94,
+      "paid_amount": 0.0,
+      "due_amount": 373.94,
+      "not_due_amount": 0.0,
+      "ar_balance": 373.94,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 5.6,
+      "max_overdue_months": 3.6
+    },
+    {
+      "contract_ref": "BJ16…7051",
+      "client_masked": "中电…公司",
+      "business_unit": "油气行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "是",
+      "delivery_type": "",
+      "ar_category": "到期欠款-逾期（6-12个月]",
+      "base_payment": 351.94,
+      "paid_amount": 0.0,
+      "due_amount": 351.94,
+      "not_due_amount": 0.0,
+      "ar_balance": 351.94,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 10.0,
+      "max_overdue_months": 8.6
+    },
+    {
+      "contract_ref": "01c2…S001",
+      "client_masked": "广发…公司",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "否",
+      "delivery_type": "项目建设型",
+      "ar_category": "到期欠款-逾期（≤6个月]",
+      "base_payment": 457.92,
+      "paid_amount": 152.64,
+      "due_amount": 305.28,
+      "not_due_amount": 0.0,
+      "ar_balance": 305.28,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 4.5,
+      "max_overdue_months": 3.1
+    },
+    {
+      "contract_ref": "01c2…S003",
+      "client_masked": "渤海…公司",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "是",
+      "delivery_type": "运营型",
+      "ar_category": "到期欠款-逾期（≤6个月]",
+      "base_payment": 272.81,
+      "paid_amount": 0.0,
+      "due_amount": 272.81,
+      "not_due_amount": 0.0,
+      "ar_balance": 272.81,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 4.7,
+      "max_overdue_months": 3.7
+    },
+    {
+      "contract_ref": "01c2…S001",
+      "client_masked": "唐山…公司",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "是",
+      "delivery_type": "项目建设型",
+      "ar_category": "到期欠款-逾期（≤6个月]",
+      "base_payment": 312.2,
+      "paid_amount": 0.0,
+      "due_amount": 267.6,
+      "not_due_amount": 0.0,
+      "ar_balance": 312.2,
+      "normal_delivery": 44.6,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 5.2,
+      "max_overdue_months": 4.3
+    },
+    {
+      "contract_ref": "04c2…S001",
+      "client_masked": "北京…公司",
+      "business_unit": "央国企",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "是",
+      "delivery_type": "",
+      "ar_category": "到期欠款-逾期（6-12个月]",
+      "base_payment": 793.8,
+      "paid_amount": 543.9,
+      "due_amount": 249.9,
+      "not_due_amount": 0.0,
+      "ar_balance": 249.9,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 11.5,
+      "max_overdue_months": 10.6
+    },
+    {
+      "contract_ref": "01c2…S002",
+      "client_masked": "交通…公司",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "否",
+      "delivery_type": "项目建设型",
+      "ar_category": "到期欠款-逾期（12-18个月]",
+      "base_payment": 296.02,
+      "paid_amount": 54.72,
+      "due_amount": 241.31,
+      "not_due_amount": 0.0,
+      "ar_balance": 241.31,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 16.3,
+      "max_overdue_months": 13.3
+    },
+    {
+      "contract_ref": "01c2…S001",
+      "client_masked": "上海…公司",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款已完成",
+      "include_target": "否",
+      "delivery_type": "项目建设型",
+      "ar_category": "到期欠款-逾期（24个月以上）",
+      "base_payment": 243.9,
+      "paid_amount": 13.6,
+      "due_amount": 230.3,
+      "not_due_amount": 0.0,
+      "ar_balance": 230.3,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 33.1,
+      "max_overdue_months": 32.2
+    },
+    {
+      "contract_ref": "01c2…S001",
+      "client_masked": "湖南…公司",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "否",
+      "delivery_type": "",
+      "ar_category": "到期欠款-逾期（24个月以上）",
+      "base_payment": 222.6,
+      "paid_amount": 0.0,
+      "due_amount": 222.6,
+      "not_due_amount": 0.0,
+      "ar_balance": 222.6,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 43.6,
+      "max_overdue_months": 40.8
+    },
+    {
+      "contract_ref": "01c2…S002",
+      "client_masked": "山东…合社",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "否",
+      "delivery_type": "运营型",
+      "ar_category": "到期欠款-逾期（12-18个月]",
+      "base_payment": 206.6,
+      "paid_amount": 6.6,
+      "due_amount": 200.0,
+      "not_due_amount": 0.0,
+      "ar_balance": 200.0,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 16.6,
+      "max_overdue_months": 13.6
+    },
+    {
+      "contract_ref": "01c2…S002",
+      "client_masked": "广发…公司",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "是",
+      "delivery_type": "项目建设型",
+      "ar_category": "到期欠款-逾期（6-12个月]",
+      "base_payment": 249.07,
+      "paid_amount": 0.0,
+      "due_amount": 199.26,
+      "not_due_amount": 0.0,
+      "ar_balance": 249.07,
+      "normal_delivery": 49.81,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 7.2,
+      "max_overdue_months": 6.2
+    },
+    {
+      "contract_ref": "01c2…S002",
+      "client_masked": "享安…公司",
+      "business_unit": "保险经纪及商城",
+      "department": "",
+      "collection_status": "回款未完成",
+      "include_target": "是",
+      "delivery_type": "运营型",
+      "ar_category": "到期欠款-逾期（24个月以上）",
+      "base_payment": 195.46,
+      "paid_amount": 0.0,
+      "due_amount": 195.46,
+      "not_due_amount": 0.0,
+      "ar_balance": 195.46,
+      "normal_delivery": 0.0,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 26.7,
+      "max_overdue_months": 26.5
+    },
+    {
+      "contract_ref": "01c2…S002",
+      "client_masked": "大唐…公司",
+      "business_unit": "金融行业",
+      "department": "",
+      "collection_status": "回款已完成",
+      "include_target": "否",
+      "delivery_type": "项目建设型",
+      "ar_category": "到期欠款-逾期（6-12个月]",
+      "base_payment": 352.5,
+      "paid_amount": 132.0,
+      "due_amount": 189.0,
+      "not_due_amount": 0.0,
+      "ar_balance": 220.5,
+      "normal_delivery": 31.5,
+      "delayed_delivery": 0.0,
+      "abnormal_delivery": 0.0,
+      "max_due_months": 8.5,
+      "max_overdue_months": 7.5
+    }
+  ]
+}
