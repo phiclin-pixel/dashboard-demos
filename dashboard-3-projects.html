@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>项目明细过程看板 | 飞书多维表格看板</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #f8fafc;
+    color: #1e293b;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+  }
+  .header {
+    background: #fff;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 18px 32px;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .header h1 { font-size: 20px; font-weight: 600; }
+  .header .right { display: flex; gap: 12px; align-items: center; }
+  .btn {
+    padding: 6px 14px; border-radius: 6px; font-size: 13px; cursor: pointer; border: 1px solid #e2e8f0;
+    background: #fff; color: #475569; transition: .2s;
+  }
+  .btn.primary { background: #0f172a; color: #fff; border-color: #0f172a; }
+  .container { padding: 24px 32px; max-width: 1500px; margin: 0 auto; }
+  .stats-bar {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-bottom: 24px;
+  }
+  .stat-card {
+    background: #fff; border-radius: 10px; padding: 18px; border: 1px solid #e2e8f0;
+    display: flex; align-items: center; gap: 14px;
+  }
+  .stat-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .stat-info .label { font-size: 12px; color: #64748b; margin-bottom: 4px; }
+  .stat-info .value { font-size: 20px; font-weight: 700; }
+  .grid-2 { display: grid; grid-template-columns: 1.2fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .card { background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; padding: 20px; }
+  .card h3 { font-size: 15px; font-weight: 600; margin-bottom: 16px; display: flex; align-items: center; gap: 8px; }
+  .chart { width: 100%; height: 300px; }
+  .project-list { display: flex; flex-direction: column; gap: 12px; }
+  .project-item {
+    background: #fff; border: 1px solid #e2e8f0; border-radius: 10px; padding: 16px;
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr 120px; align-items: center; gap: 12px;
+    transition: .2s;
+  }
+  .project-item:hover { border-color: #cbd5e1; box-shadow: 0 2px 8px rgba(0,0,0,.04); }
+  .project-name { font-weight: 600; font-size: 14px; }
+  .project-meta { font-size: 12px; color: #64748b; margin-top: 4px; }
+  .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 11px; font-weight: 600; }
+  .tag-running { background: #dbeafe; color: #1d4ed8; }
+  .tag-done { background: #dcfce7; color: #15803d; }
+  .tag-risk { background: #fee2e2; color: #b91c1c; }
+  .tag-hold { background: #fef3c7; color: #b45309; }
+  .progress-bar { height: 8px; background: #e2e8f0; border-radius: 4px; overflow: hidden; }
+  .progress-fill { height: 100%; border-radius: 4px; transition: width .3s; }
+  .progress-text { font-size: 12px; color: #64748b; margin-top: 4px; text-align: right; }
+  .milestone-row { display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+  .milestone { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #64748b; }
+  .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .dot-done { background: #22c55e; }
+  .dot-wait { background: #cbd5e1; }
+  .dot-curr { background: #3b82f6; box-shadow: 0 0 0 3px rgba(59,130,246,.2); }
+  .full-width { grid-column: 1 / -1; }
+  .gantt-scroll { overflow-x: auto; }
+  .gantt-table { width: 100%; border-collapse: collapse; font-size: 12px; min-width: 900px; }
+  .gantt-table th { text-align: left; padding: 10px; background: #f8fafc; color: #64748b; font-weight: 600; border-bottom: 1px solid #e2e8f0; white-space: nowrap; }
+  .gantt-table td { padding: 10px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; white-space: nowrap; }
+  .gantt-bar-wrap { position: relative; height: 20px; background: #f1f5f9; border-radius: 4px; min-width: 400px; }
+  .gantt-bar { position: absolute; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-size: 10px; color: #fff; font-weight: 600; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🗂️ 项目明细过程看板</h1>
+  <div class="right">
+    <button class="btn">⚙️ 筛选</button>
+    <button class="btn primary">+ 新建项目</button>
+  </div>
+</div>
+
+<div class="container">
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#eff6ff">📁</div>
+      <div class="stat-info"><div class="label">项目总数</div><div class="value">24</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#f0fdf4">▶️</div>
+      <div class="stat-info"><div class="label">进行中</div><div class="value">12</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#dcfce7">✅</div>
+      <div class="stat-info"><div class="label">已交付</div><div class="value">8</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#fef3c7">⚠️</div>
+      <div class="stat-info"><div class="label">风险预警</div><div class="value" style="color:#b45309">3</div></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon" style="background:#f3e8ff">💰</div>
+      <div class="stat-info"><div class="label">项目总金额</div><div class="value">¥ 3,860 万</div></div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>📊 项目状态分布</h3>
+      <div id="statusChart" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>📈 月度项目交付与立项趋势</h3>
+      <div id="projectTrendChart" class="chart"></div>
+    </div>
+  </div>
+
+  <div class="card full-width">
+    <h3>📋 重点项目进度一览</h3>
+    <div class="project-list">
+      <div class="project-item">
+        <div>
+          <div class="project-name">智慧园区 IoT 平台二期</div>
+          <div class="project-meta">客户：万科地产 · PM：张伟 · 周期：2024.11 - 2025.06</div>
+          <div class="milestone-row">
+            <div class="milestone"><div class="dot dot-done"></div>需求</div>
+            <div class="milestone"><div class="dot dot-done"></div>设计</div>
+            <div class="milestone"><div class="dot dot-curr"></div>开发</div>
+            <div class="milestone"><div class="dot dot-wait"></div>测试</div>
+            <div class="milestone"><div class="dot dot-wait"></div>交付</div>
+          </div>
+        </div>
+        <div><span class="tag tag-running">进行中</span></div>
+        <div style="text-align:right"><div style="font-size:14px;font-weight:600">¥ 680 万</div><div style="font-size:12px;color:#64748b">合同金额</div></div>
+        <div><div class="progress-bar"><div class="progress-fill" style="width:62%;background:#3b82f6"></div></div><div class="progress-text">62%</div></div>
+        <div style="text-align:right;font-size:13px;color:#64748b">预计 45 天</div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <div class="project-name">某银行核心系统微服务改造</div>
+          <div class="project-meta">客户：某城商行 · PM：李娜 · 周期：2024.08 - 2025.05</div>
+          <div class="milestone-row">
+            <div class="milestone"><div class="dot dot-done"></div>需求</div>
+            <div class="milestone"><div class="dot dot-done"></div>设计</div>
+            <div class="milestone"><div class="dot dot-done"></div>开发</div>
+            <div class="milestone"><div class="dot dot-curr"></div>测试</div>
+            <div class="milestone"><div class="dot dot-wait"></div>交付</div>
+          </div>
+        </div>
+        <div><span class="tag tag-running">进行中</span></div>
+        <div style="text-align:right"><div style="font-size:14px;font-weight:600">¥ 1,200 万</div><div style="font-size:12px;color:#64748b">合同金额</div></div>
+        <div><div class="progress-bar"><div class="progress-fill" style="width:88%;background:#3b82f6"></div></div><div class="progress-text">88%</div></div>
+        <div style="text-align:right;font-size:13px;color:#dc2626">延期 5 天</div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <div class="project-name">电商平台数据中台建设</div>
+          <div class="project-meta">客户：某零售集团 · PM：王强 · 周期：2025.01 - 2025.09</div>
+          <div class="milestone-row">
+            <div class="milestone"><div class="dot dot-done"></div>需求</div>
+            <div class="milestone"><div class="dot dot-curr"></div>设计</div>
+            <div class="milestone"><div class="dot dot-wait"></div>开发</div>
+            <div class="milestone"><div class="dot dot-wait"></div>测试</div>
+            <div class="milestone"><div class="dot dot-wait"></div>交付</div>
+          </div>
+        </div>
+        <div><span class="tag tag-running">进行中</span></div>
+        <div style="text-align:right"><div style="font-size:14px;font-weight:600">¥ 950 万</div><div style="font-size:12px;color:#64748b">合同金额</div></div>
+        <div><div class="progress-bar"><div class="progress-fill" style="width:28%;background:#3b82f6"></div></div><div class="progress-text">28%</div></div>
+        <div style="text-align:right;font-size:13px;color:#64748b">预计 180 天</div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <div class="project-name">医疗影像 AI 标注系统</div>
+          <div class="project-meta">客户：某三甲医院 · PM：刘洋 · 周期：2024.06 - 2025.03</div>
+          <div class="milestone-row">
+            <div class="milestone"><div class="dot dot-done"></div>需求</div>
+            <div class="milestone"><div class="dot dot-done"></div>设计</div>
+            <div class="milestone"><div class="dot dot-done"></div>开发</div>
+            <div class="milestone"><div class="dot dot-done"></div>测试</div>
+            <div class="milestone"><div class="dot dot-done"></div>交付</div>
+          </div>
+        </div>
+        <div><span class="tag tag-done">已交付</span></div>
+        <div style="text-align:right"><div style="font-size:14px;font-weight:600">¥ 420 万</div><div style="font-size:12px;color:#64748b">合同金额</div></div>
+        <div><div class="progress-bar"><div class="progress-fill" style="width:100%;background:#22c55e"></div></div><div class="progress-text">100%</div></div>
+        <div style="text-align:right;font-size:13px;color:#16a34a">提前 10 天</div>
+      </div>
+
+      <div class="project-item">
+        <div>
+          <div class="project-name">供应链金融风控引擎</div>
+          <div class="project-meta">客户：某金融科技公司 · PM：陈晨 · 周期：2024.10 - 2025.04</div>
+          <div class="milestone-row">
+            <div class="milestone"><div class="dot dot-done"></div>需求</div>
+            <div class="milestone"><div class="dot dot-done"></div>设计</div>
+            <div class="milestone"><div class="dot dot-done"></div>开发</div>
+            <div class="milestone"><div class="dot dot-curr"></div>测试</div>
+            <div class="milestone"><div class="dot dot-wait"></div>交付</div>
+          </div>
+        </div>
+        <div><span class="tag tag-risk">风险</span></div>
+        <div style="text-align:right"><div style="font-size:14px;font-weight:600">¥ 580 万</div><div style="font-size:12px;color:#64748b">合同金额</div></div>
+        <div><div class="progress-bar"><div class="progress-fill" style="width:75%;background:#f59e0b"></div></div><div class="progress-text">75%</div></div>
+        <div style="text-align:right;font-size:13px;color:#dc2626">延期 18 天</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card full-width" style="margin-top:20px">
+    <h3>📅 项目甘特图（2025 上半年）</h3>
+    <div class="gantt-scroll">
+      <table class="gantt-table">
+        <thead>
+          <tr>
+            <th style="width:220px">项目名称</th>
+            <th style="width:80px">负责人</th>
+            <th style="width:80px">状态</th>
+            <th style="min-width:500px">进度（1月 — 6月）</th>
+            <th style="width:80px">完成度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>智慧园区 IoT 二期</strong></td>
+            <td>张伟</td>
+            <td><span class="tag tag-running">进行中</span></td>
+            <td>
+              <div class="gantt-bar-wrap">
+                <div class="gantt-bar" style="left:0%;width:50%;background:#3b82f6">11月 - 6月</div>
+                <div style="position:absolute;left:33.3%;top:0;bottom:0;width:1px;background:#e2e8f0"></div>
+                <div style="position:absolute;left:66.6%;top:0;bottom:0;width:1px;background:#e2e8f0"></div>
+              </div>
+            </td>
+            <td style="font-weight:600">62%</td>
+          </tr>
+          <tr>
+            <td><strong>银行微服务改造</strong></td>
+            <td>李娜</td>
+            <td><span class="tag tag-running">进行中</span></td>
+            <td>
+              <div class="gantt-bar-wrap">
+                <div class="gantt-bar" style="left:0%;width:70%;background:#3b82f6">8月 - 5月</div>
+              </div>
+            </td>
+            <td style="font-weight:600">88%</td>
+          </tr>
+          <tr>
+            <td><strong>电商数据中台</strong></td>
+            <td>王强</td>
+            <td><span class="tag tag-running">进行中</span></td>
+            <td>
+              <div class="gantt-bar-wrap">
+                <div class="gantt-bar" style="left:16.6%;width:66.6%;background:#3b82f6">1月 - 9月</div>
+              </div>
+            </td>
+            <td style="font-weight:600">28%</td>
+          </tr>
+          <tr>
+            <td><strong>医疗影像 AI 系统</strong></td>
+            <td>刘洋</td>
+            <td><span class="tag tag-done">已交付</span></td>
+            <td>
+              <div class="gantt-bar-wrap">
+                <div class="gantt-bar" style="left:0%;width:58%;background:#22c55e">6月 - 3月</div>
+              </div>
+            </td>
+            <td style="font-weight:600;color:#16a34a">100%</td>
+          </tr>
+          <tr>
+            <td><strong>供应链金融引擎</strong></td>
+            <td>陈晨</td>
+            <td><span class="tag tag-risk">风险</span></td>
+            <td>
+              <div class="gantt-bar-wrap">
+                <div class="gantt-bar" style="left:0%;width:60%;background:#f59e0b">10月 - 4月</div>
+              </div>
+            </td>
+            <td style="font-weight:600;color:#b45309">75%</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<script>
+const statusChart = echarts.init(document.getElementById('statusChart'));
+statusChart.setOption({
+  tooltip: { trigger: 'item' },
+  legend: { orient: 'vertical', right: 10, top: 'center' },
+  series: [{
+    type: 'pie', radius: ['40%', '70%'], center: ['40%', '50%'],
+    itemStyle: { borderRadius: 8, borderColor: '#fff', borderWidth: 2 },
+    label: { formatter: '{b}\n{d}%', color: '#475569' },
+    data: [
+      { value: 12, name: '进行中', itemStyle: { color: '#3b82f6' } },
+      { value: 8, name: '已交付', itemStyle: { color: '#22c55e' } },
+      { value: 3, name: '风险', itemStyle: { color: '#ef4444' } },
+      { value: 1, name: '暂停', itemStyle: { color: '#f59e0b' } }
+    ]
+  }]
+});
+
+const projectTrendChart = echarts.init(document.getElementById('projectTrendChart'));
+projectTrendChart.setOption({
+  tooltip: { trigger: 'axis' },
+  legend: { data: ['新立项','已交付','进行中'], bottom: 0 },
+  grid: { left: '3%', right: '4%', bottom: '15%', containLabel: true },
+  xAxis: { type: 'category', data: ['1月','2月','3月','4月','5月','6月'], axisLine: { lineStyle: { color: '#e2e8f0' } }, axisLabel: { color: '#64748b' } },
+  yAxis: { type: 'value', splitLine: { lineStyle: { color: '#f1f5f9' } }, axisLabel: { color: '#64748b' } },
+  series: [
+    { name: '新立项', type: 'bar', barWidth: 16, itemStyle: { color: '#60a5fa', borderRadius: [4,4,0,0] }, data: [5,3,4,6,4,5] },
+    { name: '已交付', type: 'bar', barWidth: 16, itemStyle: { color: '#34d399', borderRadius: [4,4,0,0] }, data: [2,3,1,4,3,2] },
+    { name: '进行中', type: 'line', smooth: true, lineStyle: { color: '#f59e0b', width: 3 }, itemStyle: { color: '#f59e0b' }, areaStyle: { color: new echarts.graphic.LinearGradient(0,0,0,1,[{offset:0,color:'rgba(245,158,11,.2)'},{offset:1,color:'rgba(245,158,11,.02)'}]) }, data: [8,9,11,12,14,16] }
+  ]
+});
+
+window.addEventListener('resize', () => { statusChart.resize(); projectTrendChart.resize(); });
+</script>
+</body>
+</html>

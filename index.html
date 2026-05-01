@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>飞书多维表格看板 Demo 合集</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    color: #e2e8f0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    padding: 40px;
+  }
+  .title { font-size: 32px; font-weight: 700; margin-bottom: 8px; text-align: center; }
+  .subtitle { font-size: 16px; color: #94a3b8; margin-bottom: 48px; text-align: center; }
+  .cards {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px;
+    max-width: 900px; width: 100%;
+  }
+  .card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 32px;
+    text-decoration: none;
+    color: inherit;
+    transition: all .3s;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    border-color: #475569;
+    box-shadow: 0 20px 40px rgba(0,0,0,.3);
+  }
+  .card .emoji { font-size: 40px; margin-bottom: 16px; }
+  .card h2 { font-size: 20px; font-weight: 600; margin-bottom: 8px; color: #f8fafc; }
+  .card p { font-size: 14px; color: #94a3b8; line-height: 1.6; }
+  .card .tags { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  .card .tag { font-size: 11px; padding: 4px 10px; border-radius: 20px; background: rgba(56,189,248,.1); color: #38bdf8; border: 1px solid rgba(56,189,248,.2); }
+  .footer { margin-top: 48px; font-size: 13px; color: #64748b; text-align: center; }
+  @media (max-width: 768px) {
+    .cards { grid-template-columns: 1fr; }
+    .title { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+  <div class="title">📊 飞书多维表格监控看板 Demo</div>
+  <div class="subtitle">基于 HTML5 + ECharts 的经营数据可视化看板模板</div>
+  
+  <div class="cards">
+    <a class="card" href="dashboard-1-overview.html" target="_blank">
+      <div class="emoji">🖥️</div>
+      <h2>经营总览大屏</h2>
+      <p>深色主题数据大屏，展示年度核心 KPI、月度趋势、收入结构占比、业务线排名及季度利润完成率。</p>
+      <div class="tags">
+        <span class="tag">深色主题</span>
+        <span class="tag">KPI 卡片</span>
+        <span class="tag">仪表盘</span>
+      </div>
+    </a>
+    
+    <a class="card" href="dashboard-2-quarterly.html" target="_blank">
+      <div class="emoji">📈</div>
+      <h2>季度 / 年度对比分析</h2>
+      <p>浅色专业分析风格，支持年度/季度/月度切换，计划 vs 实际对比、多年趋势、详细数据表格。</p>
+      <div class="tags">
+        <span class="tag">浅色主题</span>
+        <span class="tag">计划对比</span>
+        <span class="tag">明细表格</span>
+      </div>
+    </a>
+    
+    <a class="card" href="dashboard-3-projects.html" target="_blank">
+      <div class="emoji">🗂️</div>
+      <h2>项目明细过程看板</h2>
+      <p>项目管理视角，展示项目状态分布、交付趋势、重点项目进度、里程碑、甘特图等过程数据。</p>
+      <div class="tags">
+        <span class="tag">项目管理</span>
+        <span class="tag">甘特图</span>
+        <span class="tag">里程碑</span>
+      </div>
+    </a>
+    
+    <a class="card" href="dashboard-4-financial.html" target="_blank">
+      <div class="emoji">💰</div>
+      <h2>财务指标仪表盘</h2>
+      <p>财务专业视角，利润瀑布图、三费率趋势、成本结构、杜邦分析 ROE 拆解、关键财务比率。</p>
+      <div class="tags">
+        <span class="tag">财务分析</span>
+        <span class="tag">瀑布图</span>
+        <span class="tag">杜邦分析</span>
+      </div>
+    </a>
+  </div>
+  
+  <div class="footer">
+    所有数据均为模拟数据，仅用于展示看板效果 · 可对接飞书多维表格 API 替换为真实数据
+  </div>
+</body>
+</html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>财务指标仪表盘 | 飞书多维表格看板</title>
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.0/dist/echarts.min.js"></script>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0f172a;
+    color: #e2e8f0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+  }
+  .header {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 16px 32px;
+    background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+    border-bottom: 1px solid #334155;
+  }
+  .header h1 { font-size: 20px; font-weight: 600; letter-spacing: 1px; }
+  .header .right { display: flex; gap: 10px; }
+  .chip { padding: 4px 12px; border-radius: 20px; font-size: 12px; border: 1px solid #334155; background: #1e293b; color: #94a3b8; }
+  .chip.active { background: #38bdf8; color: #0f172a; border-color: #38bdf8; font-weight: 600; }
+  .container { padding: 20px 32px; }
+  .kpi-row { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; margin-bottom: 20px; }
+  .kpi {
+    background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+    border: 1px solid #334155;
+    border-radius: 10px; padding: 18px; text-align: center;
+    position: relative;
+  }
+  .kpi::after { content: ''; position: absolute; bottom: 0; left: 20%; right: 20%; height: 2px; border-radius: 2px; }
+  .kpi.good::after { background: #34d399; }
+  .kpi.warn::after { background: #fbbf24; }
+  .kpi.danger::after { background: #f87171; }
+  .kpi .label { font-size: 12px; color: #94a3b8; margin-bottom: 8px; }
+  .kpi .value { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+  .kpi .change { font-size: 12px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+  .card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 10px; padding: 18px;
+  }
+  .card h3 { font-size: 14px; font-weight: 600; color: #cbd5e1; margin-bottom: 12px; }
+  .chart { width: 100%; height: 260px; }
+  .waterfall-legend { display: flex; gap: 16px; font-size: 12px; color: #94a3b8; margin-bottom: 8px; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 2px; display: inline-block; margin-right: 4px; }
+  .metric-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #334155; }
+  .metric-row:last-child { border-bottom: none; }
+  .metric-name { font-size: 13px; color: #cbd5e1; }
+  .metric-bar-wrap { flex: 1; margin: 0 16px; height: 6px; background: #334155; border-radius: 3px; overflow: hidden; }
+  .metric-bar { height: 100%; border-radius: 3px; }
+  .metric-val { font-size: 13px; font-weight: 600; font-family: monospace; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>💰 财务指标仪表盘</h1>
+  <div class="right">
+    <div class="chip">2023</div>
+    <div class="chip">2024</div>
+    <div class="chip active">2025</div>
+    <div class="chip">YTD</div>
+    <div class="chip">Q1-Q4</div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="kpi-row">
+    <div class="kpi good">
+      <div class="label">营业收入</div>
+      <div class="value" style="color:#38bdf8">¥ 8,420万</div>
+      <div class="change" style="color:#34d399">▲ 18.5% 同比</div>
+    </div>
+    <div class="kpi good">
+      <div class="label">营业成本</div>
+      <div class="value" style="color:#fbbf24">¥ 5,264万</div>
+      <div class="change" style="color:#f87171">▲ 22.1% 同比</div>
+    </div>
+    <div class="kpi good">
+      <div class="label">毛利润</div>
+      <div class="value" style="color:#34d399">¥ 3,156万</div>
+      <div class="change" style="color:#34d399">▲ 12.3% 同比</div>
+    </div>
+    <div class="kpi warn">
+      <div class="label">运营费用</div>
+      <div class="value" style="color:#fbbf24">¥ 1,262万</div>
+      <div class="change" style="color:#f87171">▲ 28.4% 同比</div>
+    </div>
+    <div class="kpi warn">
+      <div class="label">净利润</div>
+      <div class="value" style="color:#f87171">¥ 1,894万</div>
+      <div class="change" style="color:#f87171">▼ 2.1% 同比</div>
+    </div>
+    <div class="kpi good">
+      <div class="label">经营现金流</div>
+      <div class="value" style="color:#38bdf8">¥ 2,340万</div>
+      <div class="change" style="color:#34d399">▲ 35.2% 同比</div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card">
+      <h3>📊 月度利润瀑布图（2025）</h3>
+      <div id="waterfallChart" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>📈 三费率趋势</h3>
+      <div id="rateChart" class="chart"></div>
+    </div>
+  </div>
+
+  <div class="grid-3">
+    <div class="card">
+      <h3>🍩 成本结构占比</h3>
+      <div id="costPie" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>📉 杜邦分析 - ROE 拆解</h3>
+      <div id="dupontChart" class="chart"></div>
+    </div>
+    <div class="card">
+      <h3>📋 关键财务比率</h3>
+      <div class="metric-row">
+        <span class="metric-name">毛利率</span>
+        <div class="metric-bar-wrap"><div class="metric-bar" style="width:75%;background:#38bdf8"></div></div>
+        <span class="metric-val" style="color:#38bdf8">37.5%</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-name">净利率</span>
+        <div class="metric-bar-wrap"><div class="metric-bar" style="width:45%;background:#34d399"></div></div>
+        <span class="metric-val" style="color:#34d399">22.5%</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-name">运营费用率</span>
+        <div class="metric-bar-wrap"><div class="metric-bar" style="width:30%;background:#fbbf24"></div></div>
+        <span class="metric-val" style="color:#fbbf24">15.0%</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-name">资产负债率</span>
+        <div class="metric-bar-wrap"><div class="metric-bar" style="width:22%;background:#a78bfa"></div></div>
+        <span class="metric-val" style="color:#a78bfa">22.0%</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-name">流动比率</span>
+        <div class="metric-bar-wrap"><div class="metric-bar" style="width:80%;background:#22d3ee"></div></div>
+        <span class="metric-val" style="color:#22d3ee">2.8</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-name">应收账款周转天数</span>
+        <div class="metric-bar-wrap"><div class="metric-bar" style="width:40%;background:#f472b6"></div></div>
+        <span class="metric-val" style="color:#f472b6">45天</span>
+      </div>
+      <div class="metric-row">
+        <span class="metric-name">存货周转天数</span>
+        <div class="metric-bar-wrap"><div class="metric-bar" style="width:15%;background:#fb923c"></div></div>
+        <span class="metric-val" style="color:#fb923c">18天</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+const waterfallChart = echarts.init(document.getElementById('waterfallChart'));
+waterfallChart.setOption({
+  tooltip: { trigger: 'axis', axisPointer: { type: 'shadow' }, backgroundColor: '#1e293b', borderColor: '#475569', textStyle: { color: '#e2e8f0' } },
+  grid: { left: '3%', right: '4%', bottom: '10%', top: '10%', containLabel: true },
+  xAxis: { type: 'category', data: ['Q1营收','Q1成本','Q1毛利','Q1费用','Q1净利','Q2营收','Q2成本','Q2毛利','Q2费用','Q2净利','Q3营收','Q3成本','Q3毛利','Q3费用','Q3净利','Q4营收','Q4成本','Q4毛利','Q4费用','Q4净利'], axisLabel: { color: '#94a3b8', rotate: 45, fontSize: 10 }, axisLine: { lineStyle: { color: '#334155' } }, splitLine: { show: false } },
+  yAxis: { type: 'value', axisLine: { show: false }, splitLine: { lineStyle: { color: '#334155' } }, axisLabel: { color: '#94a3b8', formatter: '{value}万' } },
+  series: [{
+    type: 'bar', stack: 'Total', itemStyle: { borderColor: 'transparent', color: 'transparent' },
+    emphasis: { itemStyle: { borderColor: 'transparent', color: 'transparent' } },
+    data: [0,1640,685,520,425,0,3900,1555,1310,945,0,6430,2525,2280,1555,0,8420,5264,3156,1894]
+  }, {
+    type: 'bar', stack: 'Total', barWidth: 14,
+    itemStyle: { color: (params) => {
+      const name = params.name;
+      if (name.includes('营收')) return '#38bdf8';
+      if (name.includes('成本')) return '#f87171';
+      if (name.includes('毛利')) return '#34d399';
+      if (name.includes('费用')) return '#fbbf24';
+      return '#a78bfa';
+    }, borderRadius: [3,3,0,0] },
+    data: [
+      {value:1640,itemStyle:{color:'#38bdf8'}}, {value:1040,itemStyle:{color:'#f87171'}}, {value:280,itemStyle:{color:'#34d399'}}, {value:165,itemStyle:{color:'#fbbf24'}}, {value:115,itemStyle:{color:'#a78bfa'}},
+      {value:2260,itemStyle:{color:'#38bdf8'}}, {value:1390,itemStyle:{color:'#f87171'}}, {value:870,itemStyle:{color:'#34d399'}}, {value:350,itemStyle:{color:'#fbbf24'}}, {value:520,itemStyle:{color:'#a78bfa'}},
+      {value:2530,itemStyle:{color:'#38bdf8'}}, {value:1560,itemStyle:{color:'#f87171'}}, {value:970,itemStyle:{color:'#34d399'}}, {value:360,itemStyle:{color:'#fbbf24'}}, {value:610,itemStyle:{color:'#a78bfa'}},
+      {value:1990,itemStyle:{color:'#38bdf8'}}, {value:1359,itemStyle:{color:'#f87171'}}, {value:631,itemStyle:{color:'#34d399'}}, {value:292,itemStyle:{color:'#fbbf24'}}, {value:339,itemStyle:{color:'#a78bfa'}}
+    ]
+  }]
+});
+
+const rateChart = echarts.init(document.getElementById('rateChart'));
+rateChart.setOption({
+  tooltip: { trigger: 'axis', backgroundColor: '#1e293b', borderColor: '#475569', textStyle: { color: '#e2e8f0' } },
+  legend: { data: ['销售费用率','管理费用率','研发费用率'], textStyle: { color: '#94a3b8' }, bottom: 0 },
+  grid: { left: '3%', right: '4%', bottom: '15%', containLabel: true },
+  xAxis: { type: 'category', data: ['Q1','Q2','Q3','Q4'], axisLine: { lineStyle: { color: '#334155' } }, axisLabel: { color: '#94a3b8' } },
+  yAxis: { type: 'value', max: 25, axisLine: { show: false }, splitLine: { lineStyle: { color: '#334155' } }, axisLabel: { color: '#94a3b8', formatter: '{value}%' } },
+  series: [
+    { name: '销售费用率', type: 'line', smooth: true, lineStyle: { color: '#38bdf8', width: 3 }, itemStyle: { color: '#38bdf8' }, data: [5.2, 4.8, 5.5, 6.1] },
+    { name: '管理费用率', type: 'line', smooth: true, lineStyle: { color: '#fbbf24', width: 3 }, itemStyle: { color: '#fbbf24' }, data: [4.5, 4.2, 3.9, 4.8] },
+    { name: '研发费用率', type: 'line', smooth: true, lineStyle: { color: '#a78bfa', width: 3 }, itemStyle: { color: '#a78bfa' }, data: [8.5, 9.2, 9.8, 10.2] }
+  ]
+});
+
+const costPie = echarts.init(document.getElementById('costPie'));
+costPie.setOption({
+  tooltip: { trigger: 'item', backgroundColor: '#1e293b', borderColor: '#475569', textStyle: { color: '#e2e8f0' } },
+  series: [{
+    type: 'pie', radius: ['40%', '70%'], center: ['50%', '50%'],
+    itemStyle: { borderRadius: 6, borderColor: '#1e293b', borderWidth: 2 },
+    label: { color: '#cbd5e1', formatter: '{b}\n{d}%' },
+    data: [
+      { value: 2100, name: '人力成本', itemStyle: { color: '#f87171' } },
+      { value: 1260, name: '云服务/基础设施', itemStyle: { color: '#fbbf24' } },
+      { value: 840, name: '外包/合作', itemStyle: { color: '#a78bfa' } },
+      { value: 630, name: '市场/推广', itemStyle: { color: '#38bdf8' } },
+      { value: 434, name: '其他运营', itemStyle: { color: '#34d399' } }
+    ]
+  }]
+});
+
+const dupontChart = echarts.init(document.getElementById('dupontChart'));
+dupontChart.setOption({
+  tooltip: { trigger: 'axis', backgroundColor: '#1e293b', borderColor: '#475569', textStyle: { color: '#e2e8f0' } },
+  legend: { data: ['ROE','销售净利率','资产周转率','权益乘数'], textStyle: { color: '#94a3b8' }, bottom: 0 },
+  grid: { left: '3%', right: '4%', bottom: '18%', containLabel: true },
+  xAxis: { type: 'category', data: ['2022','2023','2024','2025'], axisLine: { lineStyle: { color: '#334155' } }, axisLabel: { color: '#94a3b8' } },
+  yAxis: [
+    { type: 'value', name: 'ROE(%)', max: 35, axisLine: { show: false }, splitLine: { lineStyle: { color: '#334155' } }, axisLabel: { color: '#94a3b8' }, nameTextStyle: { color: '#94a3b8' } },
+    { type: 'value', name: '倍数', max: 3, axisLine: { show: false }, splitLine: { show: false }, axisLabel: { color: '#94a3b8' }, nameTextStyle: { color: '#94a3b8' } }
+  ],
+  series: [
+    { name: 'ROE', type: 'line', smooth: true, lineStyle: { color: '#38bdf8', width: 4 }, itemStyle: { color: '#38bdf8' }, data: [18.5, 22.3, 26.8, 24.1] },
+    { name: '销售净利率', type: 'bar', barWidth: 12, itemStyle: { color: '#34d399', borderRadius: [3,3,0,0] }, data: [15.2, 18.5, 22.8, 22.5] },
+    { name: '资产周转率', type: 'bar', barWidth: 12, yAxisIndex: 1, itemStyle: { color: '#fbbf24', borderRadius: [3,3,0,0] }, data: [0.85, 0.88, 0.92, 0.85] },
+    { name: '权益乘数', type: 'bar', barWidth: 12, yAxisIndex: 1, itemStyle: { color: '#a78bfa', borderRadius: [3,3,0,0] }, data: [1.43, 1.37, 1.28, 1.26] }
+  ]
+});
+
+window.addEventListener('resize', () => { waterfallChart.resize(); rateChart.resize(); costPie.resize(); dupontChart.resize(); });
+</script>
+</body>
+</html>
