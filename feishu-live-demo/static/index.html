@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>飞书经营看板实时原型</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="background-wash"></div>
+  <header class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">Feishu Tables to Operating Board</p>
+      <h1>经营看板实时原型</h1>
+      <p class="deck">
+        把飞书普通表格、多维表格统一进一层聚合服务，再把项目推进、交付节点、财务经营口径和预警动态推送到网页。
+      </p>
+      <div class="architecture-strip" id="architectureStrip"></div>
+    </div>
+    <div class="hero-actions">
+      <div class="status-card">
+        <div class="status-head">
+          <span class="status-dot" id="streamDot"></span>
+          <span class="status-label">实时连接</span>
+        </div>
+        <div class="status-main" id="streamStatus">连接中</div>
+        <div class="status-sub" id="lastUpdated">等待首帧数据</div>
+      </div>
+      <div class="status-card">
+        <div class="status-label">数据形态</div>
+        <div class="status-main" id="sourceMode">Mock 飞书</div>
+        <div class="status-sub" id="sourceShape">普通表格 + 多维表格</div>
+      </div>
+      <div class="button-row">
+        <button id="simulateBtn" class="action-button solid">模拟一次表格变更</button>
+        <a class="action-button ghost" href="/api/tables" target="_blank" rel="noreferrer">查看原始表格 JSON</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="page">
+    <section class="kpi-grid" id="kpiGrid"></section>
+
+    <section class="dashboard-grid">
+      <article class="panel panel-span-7">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Finance Pulse</p>
+            <h2>营收 / 回款节奏</h2>
+          </div>
+          <p class="panel-meta" id="trendMeta">按月计划对比与现金回流</p>
+        </div>
+        <div id="trendChart" class="trend-shell"></div>
+      </article>
+
+      <article class="panel panel-span-5">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Project Health</p>
+            <h2>项目健康分布</h2>
+          </div>
+          <p class="panel-meta">项目台账实时聚合</p>
+        </div>
+        <div class="health-layout">
+          <div id="healthDonut"></div>
+          <div id="sourceSummary" class="source-summary"></div>
+        </div>
+      </article>
+
+      <article class="panel panel-span-5">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Business Lines</p>
+            <h2>业务线经营表现</h2>
+          </div>
+          <p class="panel-meta">按计划达成与毛利率拆解</p>
+        </div>
+        <div id="linePerformance" class="line-performance"></div>
+      </article>
+
+      <article class="panel panel-span-7">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Focus Projects</p>
+            <h2>重点项目雷达</h2>
+          </div>
+          <p class="panel-meta">优先级、进度、节点和阻塞并看</p>
+        </div>
+        <div id="projectList" class="project-list"></div>
+      </article>
+
+      <article class="panel panel-span-7">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Delivery Watch</p>
+            <h2>交付重点跟踪</h2>
+          </div>
+          <p class="panel-meta">最临近、最关键、最需要盯办的里程碑</p>
+        </div>
+        <div id="deliveryTable" class="table-shell"></div>
+      </article>
+
+      <article class="panel panel-span-5">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Risks and Actions</p>
+            <h2>预警与经营动作</h2>
+          </div>
+          <p class="panel-meta">经营例会需要逐项过的事情</p>
+        </div>
+        <div id="alertsList" class="alerts-list"></div>
+        <div class="divider"></div>
+        <div id="actionBoard" class="action-board"></div>
+      </article>
+
+      <article class="panel panel-span-7">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Change Feed</p>
+            <h2>实时变更流</h2>
+          </div>
+          <p class="panel-meta">模拟飞书表格更新后直接推送到看板</p>
+        </div>
+        <div id="activityFeed" class="activity-feed"></div>
+      </article>
+
+      <article class="panel panel-span-5">
+        <div class="panel-head">
+          <div>
+            <p class="panel-kicker">Source Map</p>
+            <h2>来源表结构</h2>
+          </div>
+          <p class="panel-meta">后续只需替换为真实飞书接入</p>
+        </div>
+        <div id="sourceTables" class="source-tables"></div>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>动态服务原型：Python 标准库服务 + 聚合中间层 + SSE 推送</span>
+    <span id="footerVersion">版本 --</span>
+  </footer>
+
+  <script src="/app.js"></script>
+</body>
+</html>
